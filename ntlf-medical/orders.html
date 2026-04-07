@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Orders & Cart | NTLF Medical</title>
+  <link rel="icon" href="assets/icons/favicon.ico" />
+  <link rel="stylesheet" href="css/style-orders.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+<button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+
+<nav class="navbar" id="navbar">
+  <div class="navbar__container">
+    <a href="index.html" class="navbar__logo"><span class="logo-ntlf">NTLF</span><span class="logo-medical">MEDICAL</span></a>
+    <ul class="navbar__links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="orders.html" class="active">My Orders</a></li>
+    </ul>
+    <div class="navbar__actions">
+      <a href="orders.html" class="cart-btn" aria-label="Cart">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count" id="cartCount">0</span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Page Hero -->
+<section class="page-hero">
+  <div class="page-hero__container">
+    <span class="section-label">Shopping Cart &amp; Orders</span>
+    <h1 class="page-hero__title">My Cart &amp; Orders</h1>
+    <p>Review your cart, complete checkout, and view your order history</p>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <i class="fas fa-chevron-right"></i>
+      <span>My Orders</span>
+    </nav>
+  </div>
+</section>
+
+<!-- Main Content: tabs -->
+<section class="orders-section">
+  <div class="orders-container">
+
+    <!-- Tab switcher -->
+    <div class="orders-tabs">
+      <button class="orders-tab-btn active" data-tab="cart">
+        <i class="fas fa-shopping-cart"></i> Cart
+        <span class="tab-badge" id="cartTabBadge">0</span>
+      </button>
+      <button class="orders-tab-btn" data-tab="checkout">
+        <i class="fas fa-credit-card"></i> Checkout
+      </button>
+      <button class="orders-tab-btn" data-tab="history">
+        <i class="fas fa-history"></i> Order History
+        <span class="tab-badge" id="historyTabBadge">0</span>
+      </button>
+    </div>
+
+    <!-- ── Cart Tab ── -->
+    <div class="orders-tab-panel active" id="panel-cart">
+      <div class="cart-layout">
+        <div class="cart-items" id="cartItems">
+          <!-- Populated by JS -->
+        </div>
+        <div class="cart-summary">
+          <h3>Order Summary</h3>
+          <div class="summary-row"><span>Subtotal</span><strong id="summarySubtotal">GH₵ 0.00</strong></div>
+          <div class="summary-row"><span>Items</span><strong id="summaryCount">0</strong></div>
+          <div class="summary-note">
+            <i class="fas fa-info-circle"></i>
+            Delivery charges will be confirmed upon order placement. Goods are not sold on credit.
+          </div>
+          <button class="btn btn--primary btn-checkout" id="proceedCheckout">
+            Proceed to Checkout <i class="fas fa-arrow-right"></i>
+          </button>
+          <a href="products.html" class="btn btn--outline" style="width:100%;justify-content:center;margin-top:.75rem;">
+            <i class="fas fa-arrow-left"></i> Continue Shopping
+          </a>
+        </div>
+      </div>
+      <div class="empty-cart" id="emptyCart" style="display:none">
+        <i class="fas fa-shopping-cart"></i>
+        <h3>Your cart is empty</h3>
+        <p>Add products from our catalogue to get started.</p>
+        <a href="products.html" class="btn btn--primary">Browse Products</a>
+      </div>
+    </div>
+
+    <!-- ── Checkout Tab ── -->
+    <div class="orders-tab-panel" id="panel-checkout">
+      <div class="checkout-layout">
+        <div class="checkout-form-wrap">
+          <h3>Delivery & Contact Information</h3>
+          <form class="checkout-form" id="checkoutForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="chkName">Full Name <span class="req">*</span></label>
+                <input type="text" id="chkName" placeholder="e.g. Kofi Mensah" required />
+                <span class="field-error" id="e-name"></span>
+              </div>
+              <div class="form-group">
+                <label for="chkHospital">Hospital / Clinic / Organisation</label>
+                <input type="text" id="chkHospital" placeholder="e.g. Trust Diagnostic Lab" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="chkPhone">Phone Number <span class="req">*</span></label>
+                <input type="tel" id="chkPhone" placeholder="e.g. 054 140 6489" required />
+                <span class="field-error" id="e-phone"></span>
+              </div>
+              <div class="form-group">
+                <label for="chkEmail">Email Address</label>
+                <input type="email" id="chkEmail" placeholder="e.g. kofi@example.com" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="chkAddress">Delivery Address <span class="req">*</span></label>
+              <input type="text" id="chkAddress" placeholder="e.g. 14 Hospital Road, North Kaneshie, Accra" required />
+              <span class="field-error" id="e-address"></span>
+            </div>
+            <div class="form-group">
+              <label for="chkNotes">Order Notes (optional)</label>
+              <textarea id="chkNotes" rows="3" placeholder="Special instructions, preferred delivery time, etc."></textarea>
+            </div>
+            <div class="checkout-actions">
+              <button type="submit" class="btn btn--primary" id="placeOrderBtn">
+                <i class="fas fa-check-circle"></i> Place Order
+              </button>
+              <button type="button" id="backToCart" class="btn btn--outline">
+                <i class="fas fa-arrow-left"></i> Back to Cart
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="checkout-summary">
+          <h3>Your Order</h3>
+          <div id="checkoutItems"><!-- Populated by JS --></div>
+          <div class="summary-divider"></div>
+          <div class="summary-row summary-row--total">
+            <span>Total</span>
+            <strong id="checkoutTotal">GH₵ 0.00</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Order History Tab ── -->
+    <div class="orders-tab-panel" id="panel-history">
+      <div id="orderHistoryList"><!-- Populated by JS --></div>
+      <div class="empty-state" id="emptyHistory" style="display:none">
+        <i class="fas fa-receipt"></i>
+        <h3>No orders yet</h3>
+        <p>Your completed orders will appear here.</p>
+        <a href="products.html" class="btn btn--primary">Shop Now</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Order Confirmation Modal -->
+<div class="modal-overlay" id="confirmModal" style="display:none">
+  <div class="modal confirm-modal">
+    <div class="confirm-icon"><i class="fas fa-check-circle"></i></div>
+    <h3>Order Placed!</h3>
+    <p id="confirmMessage">Thank you for your order. Our team will contact you to confirm delivery details.</p>
+    <div class="confirm-details" id="confirmDetails"></div>
+    <div class="confirm-actions">
+      <button id="closeConfirm" class="btn btn--primary">Done</button>
+      <a href="products.html" class="btn btn--outline">Continue Shopping</a>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer__main">
+    <div class="footer__col footer__col--brand">
+      <a href="index.html" class="footer__logo"><span class="logo-ntlf">NTLF</span><span class="logo-medical">MEDICAL</span></a>
+      <p>Your trusted partner for medical and laboratory supplies across Ghana.</p>
+    </div>
+    <div class="footer__col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h4>Contact</h4>
+      <ul class="footer__contact">
+        <li><i class="fas fa-phone"></i><a href="tel:+233541406489">054 140 6489</a></li>
+        <li><i class="fas fa-phone"></i><a href="tel:+233204154456">020 415 4456</a></li>
+        <li><i class="fas fa-envelope"></i><a href="mailto:NTFLGhana@gmail.com">NTFLGhana@gmail.com</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <p>&copy; <span id="year"></span> NTLF Medical. All rights reserved.</p>
+  </div>
+</footer>
+
+<button id="scrollTop" class="scroll-top" aria-label="Scroll to top"><i class="fas fa-chevron-up"></i></button>
+<div id="toast" class="toast" role="alert" aria-live="polite"></div>
+
+<script src="js/script-orders.js"></script>
+</body>
+</html>

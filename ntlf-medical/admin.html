@@ -1,0 +1,582 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard | NTLF Medical</title>
+    <meta name="robots" content="noindex,nofollow" />
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style-admin.css" />
+  </head>
+  <body>
+    <!-- ═══════════════════════════════════
+       TOAST
+  ══════════════════════════════════════ -->
+    <div id="toast" class="toast" role="alert" aria-live="polite"></div>
+
+    <!-- ═══════════════════════════════════
+       LOGIN SCREEN
+  ══════════════════════════════════════ -->
+    <div id="loginScreen" class="login-screen">
+      <div class="login-card">
+        <!-- Logo -->
+        <div class="login-logo">
+          <div class="logo-mark">
+            <div class="logo-circle"></div>
+            <div class="logo-lines">
+              <span></span><span></span><span></span>
+            </div>
+          </div>
+          <div class="logo-text">
+            <span class="logo-ntlf">NTLF</span>
+            <span class="logo-medical">MEDICAL</span>
+          </div>
+        </div>
+
+        <div class="login-badge"><i class="fas fa-lock"></i> Admin Portal</div>
+        <h1>Dashboard Login</h1>
+        <p>Enter your admin password to manage products and orders.</p>
+
+        <form id="loginForm" novalidate>
+          <div class="form-group">
+            <label for="adminName"
+              >Your Name <span style="color: #e53e3e">*</span></label
+            >
+            <input
+              type="text"
+              id="adminName"
+              placeholder="e.g. Samuel Mensah"
+              required
+              autocomplete="name"
+            />
+            <p class="login-error" id="nameError" aria-live="polite"></p>
+          </div>
+          <div class="form-group">
+            <label for="adminRole">Role</label>
+            <select id="adminRole">
+              <option value="General Manager">General Manager</option>
+              <option value="Sales Manager">Sales Manager</option>
+              <option value="Procurement Officer">Procurement Officer</option>
+              <option value="Customer Support">Customer Support</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="adminPass"
+              >Password <span style="color: #e53e3e">*</span></label
+            >
+            <div class="pass-wrap">
+              <input
+                type="password"
+                id="adminPass"
+                placeholder="Enter admin password"
+                required
+                autocomplete="current-password"
+              />
+              <button
+                type="button"
+                id="togglePass"
+                class="pass-toggle"
+                aria-label="Show/hide password"
+              >
+                &#128065;
+              </button>
+            </div>
+          </div>
+          <p class="login-error" id="loginError" aria-live="polite"></p>
+          <button type="submit" class="btn btn-primary login-btn">
+            Login to Dashboard
+          </button>
+        </form>
+
+        <!-- <div class="login-demo">
+          <span>Demo password:</span> <code>admin123</code>
+        </div> -->
+        <a href="index.html" class="login-back"
+          ><i class="fas fa-arrow-left"></i> Back to Website</a
+        >
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════
+       ADMIN DASHBOARD
+  ══════════════════════════════════════ -->
+    <div id="adminDash" class="admin-dash" style="display: none">
+      <!-- ── Sidebar ── -->
+      <aside class="admin-sidebar" id="adminSidebar">
+        <div class="sidebar-top">
+          <div class="sidebar-logo">
+            <div class="logo-mark small">
+              <div class="logo-circle"></div>
+              <div class="logo-lines">
+                <span></span><span></span><span></span>
+              </div>
+            </div>
+            <div class="logo-text">
+              <span class="logo-ntlf">NTLF</span>
+              <span class="logo-medical">MEDICAL</span>
+            </div>
+          </div>
+          <button
+            class="sidebar-close"
+            id="sidebarClose"
+            aria-label="Close sidebar"
+          >
+            <i class="fas fa-xmark"></i>
+          </button>
+        </div>
+
+        <nav class="admin-nav" aria-label="Admin navigation">
+          <button class="anav-btn active" data-tab="overview">
+            <span class="anav-icon"><i class="fas fa-chart-line"></i></span>
+            Overview
+          </button>
+          <button class="anav-btn" data-tab="add-product">
+            <span class="anav-icon"><i class="fas fa-circle-plus"></i></span>
+            Add Product
+          </button>
+          <button class="anav-btn" data-tab="manage-products">
+            <span class="anav-icon"><i class="fas fa-boxes-stacked"></i></span>
+            Manage Products
+          </button>
+          <button class="anav-btn" data-tab="orders-tab">
+            <span class="anav-icon"><i class="fas fa-clipboard-list"></i></span>
+            All Orders
+            <span class="anav-badge" id="ordersBadge">0</span>
+          </button>
+        </nav>
+
+        <div class="sidebar-footer">
+          <button id="logoutBtn" class="btn-logout">
+            <i class="fas fa-right-from-bracket"></i> Logout
+          </button>
+          <a href="index.html" class="btn-back-site"
+            ><i class="fas fa-arrow-left"></i> Back to Site</a
+          >
+        </div>
+      </aside>
+
+      <!-- ── Mobile header ── -->
+      <div class="admin-mobile-header">
+        <button
+          class="sidebar-open-btn"
+          id="sidebarOpenBtn"
+          aria-label="Open menu"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+        <span class="mobile-title">NTLF Admin</span>
+        <button id="logoutBtnMobile" class="btn-logout-mini">
+          <i class="fas fa-right-from-bracket"></i>
+        </button>
+      </div>
+
+      <!-- ── Main ── -->
+      <main class="admin-main">
+        <!-- Sticky header bar -->
+        <header class="admin-topbar">
+          <div class="topbar-left">
+            <h1 id="tabTitle">Dashboard Overview</h1>
+          </div>
+          <div class="topbar-right">
+            <span class="topbar-time" id="adminTime"></span>
+            <div class="topbar-user">
+              <div class="user-avatar" id="adminAvatar">A</div>
+              <div class="topbar-identity">
+                <span class="topbar-name" id="topbarName">Admin</span>
+                <span class="topbar-role" id="topbarRole">Staff</span>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <!-- ════ TAB: OVERVIEW ════ -->
+        <div class="admin-tab active" id="tab-overview">
+          <!-- Stats row -->
+          <div class="stats-row" id="statsRow">
+            <div class="stat-card stat-blue">
+              <div class="sc-icon sc-blue">
+                <i class="fas fa-boxes-stacked"></i>
+              </div>
+              <div class="sc-body">
+                <strong id="ovProducts">0</strong>
+                <span>Total Products</span>
+              </div>
+            </div>
+            <div class="stat-card stat-green">
+              <div class="sc-icon sc-green">
+                <i class="fas fa-clipboard-list"></i>
+              </div>
+              <div class="sc-body">
+                <strong id="ovOrders">0</strong>
+                <span>Total Orders</span>
+              </div>
+            </div>
+            <div class="stat-card stat-amber">
+              <div class="sc-icon sc-amber"><i class="fas fa-coins"></i></div>
+              <div class="sc-body">
+                <strong id="ovRevenue">GH₵ 0</strong>
+                <span>Est. Revenue</span>
+              </div>
+            </div>
+            <div class="stat-card stat-purple">
+              <div class="sc-icon sc-purple"><i class="fas fa-star"></i></div>
+              <div class="sc-body">
+                <strong id="ovCustom">0</strong>
+                <span>Custom Added</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Content grid -->
+          <div class="ov-grid">
+            <!-- Recent orders -->
+            <div class="dash-card">
+              <div class="dash-card-header">
+                <h3>Recent Orders</h3>
+                <button class="anav-btn-text" data-tab="orders-tab">
+                  View All →
+                </button>
+              </div>
+              <div id="ovRecentOrders">
+                <p class="empty-msg">No orders yet.</p>
+              </div>
+            </div>
+
+            <!-- Category breakdown -->
+            <div class="dash-card">
+              <div class="dash-card-header">
+                <h3>Products by Category</h3>
+              </div>
+              <div id="ovCatBreakdown"></div>
+            </div>
+          </div>
+
+          <!-- Notice -->
+          <div class="admin-notice">
+            <span class="notice-icon-wrap"
+              ><i class="fas fa-triangle-exclamation"></i
+            ></span>
+            <p>
+              <strong>Policy Reminder:</strong> Goods are not sold on credit.
+              All orders are cash-and-carry. Confirm payment before processing
+              any delivery.
+            </p>
+          </div>
+        </div>
+        <!-- /tab-overview -->
+
+        <!-- ════ TAB: ADD PRODUCT ════ -->
+        <div class="admin-tab" id="tab-add-product">
+          <div class="form-card">
+            <div class="form-card-header">
+              <h2>Add New Product</h2>
+              <p>
+                Products added here automatically appear in the public product
+                catalog.
+              </p>
+            </div>
+
+            <form id="addProductForm" novalidate autocomplete="off">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="pName"
+                    >Product Name <span class="req">*</span></label
+                  >
+                  <input
+                    type="text"
+                    id="pName"
+                    placeholder="e.g. Digital Blood Glucose Meter"
+                    required
+                  />
+                  <span class="field-error" id="err-pName"></span>
+                </div>
+                <div class="form-group">
+                  <label for="pCategory"
+                    >Category <span class="req">*</span></label
+                  >
+                  <select id="pCategory" required>
+                    <option value="">Select a category…</option>
+                    <option value="gloves">Gloves &amp; PPE</option>
+                    <option value="syringes">Syringes &amp; Cannula</option>
+                    <option value="lab-supplies">Lab Supplies</option>
+                    <option value="wound-care">Wound Care</option>
+                    <option value="respiratory">Respiratory</option>
+                    <option value="diagnostics">Diagnostics</option>
+                    <option value="consumables">Consumables</option>
+                    <option value="furniture">Hospital Furniture</option>
+                    <option value="equipment">Medical Equipment</option>
+                  </select>
+                  <span class="field-error" id="err-pCategory"></span>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="pPrice"
+                    >Price (GH₵) <span class="req">*</span></label
+                  >
+                  <input
+                    type="number"
+                    id="pPrice"
+                    placeholder="e.g. 45.00"
+                    min="0"
+                    step="0.01"
+                    required
+                  />
+                  <span class="field-error" id="err-pPrice"></span>
+                </div>
+                <div class="form-group">
+                  <label for="pQuantity"
+                    >Pack / Unit Size <span class="req">*</span></label
+                  >
+                  <input
+                    type="text"
+                    id="pQuantity"
+                    placeholder="e.g. 100pcs, 1pc, 50pairs"
+                    required
+                  />
+                  <span class="field-error" id="err-pQuantity"></span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="pDescription"
+                  >Product Description <span class="req">*</span></label
+                >
+                <textarea
+                  id="pDescription"
+                  rows="3"
+                  placeholder="Describe the product — what it is, who uses it, key features…"
+                  required
+                ></textarea>
+                <span class="field-error" id="err-pDescription"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="pSpecs"
+                  >Specifications <small>(one per line)</small></label
+                >
+                <textarea
+                  id="pSpecs"
+                  rows="3"
+                  placeholder="Material: Latex&#10;Sizes: S / M / L / XL&#10;Sterile: Yes"
+                ></textarea>
+                <small class="field-hint"
+                  >Each line becomes one specification bullet on the product
+                  page.</small
+                >
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="pImage"
+                    >Image File Path <small>(optional)</small></label
+                  >
+                  <input
+                    type="text"
+                    id="pImage"
+                    placeholder="assets/images/products/product-name.jpg"
+                  />
+                  <small class="field-hint"
+                    >Add the image file to the assets/images/products/ folder
+                    first.</small
+                  >
+                </div>
+                <div class="form-group">
+                  <label for="pBadge"
+                    >Card Badge <small>(optional)</small></label
+                  >
+                  <input
+                    type="text"
+                    id="pBadge"
+                    placeholder="e.g. New, Popular, Best Seller"
+                    maxlength="20"
+                  />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="check-label">
+                  <input type="checkbox" id="pFeatured" />
+                  <span class="check-custom"></span>
+                  Feature this product on the homepage slider
+                </label>
+              </div>
+
+              <!-- Preview Card -->
+              <div
+                class="product-preview"
+                id="productPreview"
+                style="display: none"
+              >
+                <h4>Preview</h4>
+                <div class="preview-card">
+                  <div class="preview-img">
+                    <i class="fas fa-kit-medical"></i>
+                  </div>
+                  <div class="preview-body">
+                    <div class="preview-cat" id="prevCat">—</div>
+                    <div class="preview-name" id="prevName">—</div>
+                    <div class="preview-price" id="prevPrice">GH₵ —</div>
+                    <div class="preview-unit" id="prevUnit">—</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary">
+                  <i class="fas fa-circle-check"></i> Add to Catalog
+                </button>
+                <button type="button" id="clearFormBtn" class="btn btn-ghost">
+                  Clear Form
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- /tab-add-product -->
+
+        <!-- ════ TAB: MANAGE PRODUCTS ════ -->
+        <div class="admin-tab" id="tab-manage-products">
+          <div class="manage-topbar">
+            <h2>Product Management</h2>
+            <div class="manage-controls">
+              <input
+                type="search"
+                id="manageSearch"
+                class="manage-search"
+                placeholder="Search products…"
+                aria-label="Search products"
+              />
+              <select
+                id="manageCatFilter"
+                class="manage-filter-select"
+                aria-label="Filter by category"
+              >
+                <option value="">All Categories</option>
+                <option value="gloves">Gloves &amp; PPE</option>
+                <option value="syringes">Syringes &amp; Cannula</option>
+                <option value="lab-supplies">Lab Supplies</option>
+                <option value="wound-care">Wound Care</option>
+                <option value="respiratory">Respiratory</option>
+                <option value="diagnostics">Diagnostics</option>
+                <option value="consumables">Consumables</option>
+                <option value="furniture">Hospital Furniture</option>
+                <option value="equipment">Medical Equipment</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="manage-meta" id="manageMeta">Showing all products</div>
+
+          <div class="table-card">
+            <div class="table-scroll">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Product</th>
+                    <th>Category</th>
+                    <th>Price (GH₵)</th>
+                    <th>Unit</th>
+                    <th>Source</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="manageTableBody">
+                  <!-- Populated by JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <!-- /tab-manage-products -->
+
+        <!-- ════ TAB: ORDERS ════ -->
+        <div class="admin-tab" id="tab-orders-tab">
+          <div class="manage-topbar">
+            <h2>All Customer Orders</h2>
+            <button class="btn btn-danger" id="clearOrdersBtn">
+              <i class="fas fa-trash"></i> Clear All Orders
+            </button>
+          </div>
+
+          <div id="adminOrdersList">
+            <p class="empty-msg">No orders yet.</p>
+          </div>
+        </div>
+        <!-- /tab-orders-tab -->
+      </main>
+      <!-- /admin-main -->
+    </div>
+    <!-- /adminDash -->
+
+    <!-- ═══════════════════════════════════
+       EDIT PRODUCT MODAL
+  ══════════════════════════════════════ -->
+    <div
+      class="modal-overlay"
+      id="editModal"
+      style="display: none"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="editModalTitle"
+    >
+      <div class="modal-box">
+        <div class="modal-header">
+          <h3 id="editModalTitle">Edit Product</h3>
+          <button class="modal-close" id="editModalClose" aria-label="Close">
+            <i class="fas fa-xmark"></i>
+          </button>
+        </div>
+        <form id="editProductForm">
+          <input type="hidden" id="editProductId" />
+          <div class="form-row">
+            <div class="form-group">
+              <label for="editName">Product Name</label>
+              <input type="text" id="editName" required />
+            </div>
+            <div class="form-group">
+              <label for="editPrice">Price (GH₵)</label>
+              <input
+                type="number"
+                id="editPrice"
+                min="0"
+                step="0.01"
+                required
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="editQuantity">Pack Size / Unit</label>
+            <input type="text" id="editQuantity" />
+          </div>
+          <div class="form-group">
+            <label for="editDesc">Description</label>
+            <textarea id="editDesc" rows="3"></textarea>
+          </div>
+          <div class="modal-actions">
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+            <button type="button" id="cancelEdit" class="btn btn-ghost">
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/products-data.js"></script>
+    <script src="js/script-admin.js"></script>
+  </body>
+</html>

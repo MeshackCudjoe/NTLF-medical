@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Products Catalog | NTLF Medical – Medical &amp; Laboratory Supplies Ghana
+    </title>
+    <meta
+      name="description"
+      content="Browse NTLF Medical's full catalog of 67+ medical and laboratory supplies. Gloves, syringes, IV cannulas, diagnostics, equipment and more. Competitive GH₵ prices."
+    />
+    <meta
+      name="keywords"
+      content="medical supplies Ghana, lab supplies Accra, gloves Ghana, syringes Ghana, IV cannula, medical equipment Accra, NTLF Medical products"
+    />
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style-products.css" />
+  </head>
+  <body data-theme="light">
+    <!-- ═══════════════════════════════════════════════
+       PAGE LOADER
+  ════════════════════════════════════════════════ -->
+    <div id="loader" class="loader-overlay" role="status" aria-label="Loading">
+      <div class="loader-content">
+        <div class="loader-logo">
+          <span class="logo-ntlf">NTLF</span
+          ><span class="logo-medical">MEDICAL</span>
+        </div>
+        <div class="loader-bar"><div class="loader-fill"></div></div>
+        <p class="loader-text">Loading catalog…</p>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════
+       TOAST
+  ════════════════════════════════════════════════ -->
+    <div id="toast" class="toast" role="alert" aria-live="polite"></div>
+
+    <!-- ═══════════════════════════════════════════════
+       DARK MODE TOGGLE
+  ════════════════════════════════════════════════ -->
+    <button
+      id="darkToggle"
+      class="dark-toggle"
+      aria-label="Toggle dark mode"
+      title="Toggle dark mode"
+    >
+      <span class="sun-icon" aria-hidden="true"
+        ><i class="fas fa-sun"></i
+      ></span>
+      <span class="moon-icon" aria-hidden="true"
+        ><i class="fas fa-moon"></i
+      ></span>
+    </button>
+
+    <!-- ═══════════════════════════════════════════════
+       SCROLL TO TOP
+  ════════════════════════════════════════════════ -->
+    <button id="scrollTop" class="scroll-top" aria-label="Scroll to top">
+      <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- ═══════════════════════════════════════════════
+       NAVIGATION
+  ════════════════════════════════════════════════ -->
+    <header class="site-header scrolled" id="siteHeader">
+      <nav
+        class="navbar container"
+        role="navigation"
+        aria-label="Main navigation"
+      >
+        <a href="index.html" class="nav-logo" aria-label="NTLF Medical home">
+          <div class="logo-mark" aria-hidden="true">
+            <div class="logo-circle"></div>
+            <div class="logo-lines">
+              <span></span><span></span><span></span>
+            </div>
+          </div>
+          <div class="logo-text">
+            <span class="logo-ntlf">NTLF</span>
+            <span class="logo-medical">MEDICAL</span>
+          </div>
+        </a>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="products.html" class="active">Products</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="orders.html">Orders</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <a href="orders.html" class="nav-cart" aria-label="View cart">
+            <span class="cart-icon"><i class="fas fa-cart-shopping"></i></span>
+            <span class="cart-badge" id="cartBadge">0</span>
+          </a>
+          <a href="orders.html" class="btn btn-nav">My Cart</a>
+          <button
+            class="hamburger"
+            id="hamburger"
+            aria-label="Open menu"
+            aria-expanded="false"
+          >
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- ═══════════════════════════════════════════════
+       PAGE HERO
+  ════════════════════════════════════════════════ -->
+    <section class="page-hero" aria-label="Products catalog header">
+      <div class="page-hero-bg" aria-hidden="true">
+        <div class="phb-blob phb-1"></div>
+        <div class="phb-blob phb-2"></div>
+        <div class="phb-grid"></div>
+      </div>
+      <div class="container page-hero-content">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span aria-hidden="true"> / </span>
+          <span aria-current="page">Products</span>
+        </nav>
+        <h1>Our Products Catalog</h1>
+        <p>
+          Browse <strong id="totalCount">67+</strong> certified medical and
+          laboratory supplies — click any product to see full details and add to
+          cart
+        </p>
+        <div class="hero-notice" role="note">
+          <i class="fas fa-triangle-exclamation"></i>
+          Goods are not sold on credit &nbsp;|&nbsp; Contact us for items not
+          listed: <a href="tel:+233541406489">054 140 6489</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+       MAIN CATALOG LAYOUT
+  ════════════════════════════════════════════════ -->
+    <div class="catalog-layout container">
+      <!-- ── SIDEBAR: Filters ──────────────────────── -->
+      <aside
+        class="catalog-sidebar"
+        id="catalogSidebar"
+        aria-label="Product filters"
+      >
+        <!-- Mobile filter toggle (shows on mobile only) -->
+        <button
+          class="filter-toggle-btn"
+          id="filterToggle"
+          aria-expanded="false"
+          aria-controls="filterPanel"
+        >
+          <span class="filter-icon"><i class="fas fa-sliders"></i></span>
+          Filters &amp; Categories
+          <span class="filter-chevron"
+            ><i class="fas fa-chevron-down"></i
+          ></span>
+        </button>
+
+        <div class="filter-panel" id="filterPanel">
+          <!-- Category Filter -->
+          <div class="filter-group">
+            <h3 class="filter-heading">Categories</h3>
+            <ul class="filter-cats" id="categoryList" role="list">
+              <!-- Built by JS -->
+            </ul>
+          </div>
+
+          <!-- Price Range -->
+          <div class="filter-group">
+            <h3 class="filter-heading">Price Range (GH₵)</h3>
+            <div class="price-inputs">
+              <div class="price-input-wrap">
+                <label for="priceMin" class="price-label">Min</label>
+                <input
+                  type="number"
+                  id="priceMin"
+                  class="price-input"
+                  placeholder="0"
+                  min="0"
+                />
+              </div>
+              <span class="price-dash" aria-hidden="true">–</span>
+              <div class="price-input-wrap">
+                <label for="priceMax" class="price-label">Max</label>
+                <input
+                  type="number"
+                  id="priceMax"
+                  class="price-input"
+                  placeholder="Any"
+                  min="0"
+                />
+              </div>
+            </div>
+            <button class="btn-apply-price" id="applyPriceBtn">Apply</button>
+          </div>
+
+          <!-- Sort -->
+          <div class="filter-group">
+            <h3 class="filter-heading">Sort By</h3>
+            <select
+              class="filter-select"
+              id="sortSelect"
+              aria-label="Sort products"
+            >
+              <option value="default">Default Order</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="name-asc">Name: A – Z</option>
+              <option value="name-desc">Name: Z – A</option>
+              <option value="featured">Featured First</option>
+            </select>
+          </div>
+
+          <!-- Reset Button -->
+          <button class="btn-reset-filters" id="resetFilters">
+            ✕ Clear All Filters
+          </button>
+
+          <!-- Contact Box -->
+          <div class="sidebar-contact-box">
+            <p class="scb-title">Can't find what you need?</p>
+            <p class="scb-text">
+              We supply many items not listed here. Contact us and we will
+              source it for you.
+            </p>
+            <a href="tel:+233541406489" class="btn btn-primary scb-btn">
+              <i class="fas fa-phone"></i> 054 140 6489
+            </a>
+            <a
+              href="https://wa.me/233541406489?text=Hello%2C%20I%20need%20a%20product%20not%20on%20your%20catalog."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-wa scb-btn"
+            >
+              <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+          </div>
+        </div>
+        <!-- /.filter-panel -->
+      </aside>
+
+      <!-- ── MAIN CONTENT ──────────────────────────── -->
+      <main class="catalog-main" id="catalogMain">
+        <!-- Toolbar: search, result count, view toggle -->
+        <div class="catalog-toolbar" role="search">
+          <div class="search-wrap">
+            <span class="search-icon"
+              ><i class="fas fa-magnifying-glass"></i
+            ></span>
+            <input
+              type="search"
+              id="searchInput"
+              class="search-input"
+              placeholder="Search products…"
+              aria-label="Search products"
+              autocomplete="off"
+            />
+            <button
+              class="search-clear"
+              id="searchClear"
+              aria-label="Clear search"
+              style="display: none"
+            >
+              ✕
+            </button>
+          </div>
+
+          <div class="toolbar-right">
+            <span class="results-count" id="resultsCount" aria-live="polite"
+              >Showing all products</span
+            >
+            <div class="view-toggle" role="group" aria-label="View mode">
+              <button
+                class="view-btn active"
+                id="gridViewBtn"
+                data-view="grid"
+                aria-label="Grid view"
+                title="Grid view"
+              >
+                <i class="fas fa-grip"></i>
+              </button>
+              <button
+                class="view-btn"
+                id="listViewBtn"
+                data-view="list"
+                aria-label="List view"
+                title="List view"
+              >
+                <i class="fas fa-list"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Active Filter Tags -->
+        <div
+          class="active-filters"
+          id="activeFilters"
+          aria-label="Active filters"
+        ></div>
+
+        <!-- Product Grid / List -->
+        <div
+          class="products-grid"
+          id="productsGrid"
+          role="list"
+          aria-label="Products"
+        >
+          <!-- Injected by JS -->
+        </div>
+
+        <!-- Empty State -->
+        <div
+          class="empty-state"
+          id="emptyState"
+          style="display: none"
+          aria-live="polite"
+        >
+          <div class="empty-icon"><i class="fas fa-box-open"></i></div>
+          <h3>No products found</h3>
+          <p>
+            Try adjusting your search or filters. You can also contact us for
+            items not listed in our catalog.
+          </p>
+          <button class="btn btn-primary" id="clearFiltersBtn">
+            Clear All Filters
+          </button>
+        </div>
+
+        <!-- Pagination -->
+        <div
+          class="pagination-wrap"
+          id="paginationWrap"
+          aria-label="Pagination"
+        ></div>
+      </main>
+      <!-- /.catalog-main -->
+    </div>
+    <!-- /.catalog-layout -->
+
+    <!-- ═══════════════════════════════════════════════
+       QUICK VIEW MODAL
+  ════════════════════════════════════════════════ -->
+    <div
+      class="modal-overlay"
+      id="quickViewModal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalTitle"
+      style="display: none"
+    >
+      <div class="modal-box">
+        <button
+          class="modal-close"
+          id="modalClose"
+          aria-label="Close quick view"
+        >
+          <i class="fas fa-xmark"></i>
+        </button>
+        <div class="modal-inner" id="modalInner">
+          <!-- Injected by JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════════════ -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a
+            href="index.html"
+            class="footer-logo"
+            aria-label="NTLF Medical home"
+          >
+            <div class="logo-mark small" aria-hidden="true">
+              <div class="logo-circle"></div>
+              <div class="logo-lines">
+                <span></span><span></span><span></span>
+              </div>
+            </div>
+            <div class="logo-text">
+              <span class="logo-ntlf">NTLF</span>
+              <span class="logo-medical">MEDICAL</span>
+            </div>
+          </a>
+          <p class="footer-tagline">
+            Your Trusted Medical &amp; Laboratory Supplies Partner in Ghana.
+          </p>
+          <div class="footer-socials" aria-label="Social media">
+            <a href="#" class="social-link" aria-label="Facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" class="social-link" aria-label="Twitter"
+              ><i class="fab fa-x-twitter"></i
+            ></a>
+            <a href="#" class="social-link" aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a
+              href="https://wa.me/233541406489?text=Hello%2C%20I%27m%20interested%20in%20your%20medical%20supplies."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-link wa"
+              aria-label="WhatsApp"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="products.html">Products Catalog</a></li>
+            <li><a href="orders.html">My Orders</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Categories</h4>
+          <ul>
+            <li><a href="products.html?cat=gloves">Gloves &amp; PPE</a></li>
+            <li>
+              <a href="products.html?cat=syringes">Syringes &amp; Cannula</a>
+            </li>
+            <li><a href="products.html?cat=lab-supplies">Lab Supplies</a></li>
+            <li><a href="products.html?cat=diagnostics">Diagnostics</a></li>
+            <li><a href="products.html?cat=equipment">Medical Equipment</a></li>
+            <li>
+              <a href="products.html?cat=furniture">Hospital Furniture</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <ul class="footer-contact">
+            <li>
+              <span class="fc-icon"><i class="fas fa-location-dot"></i></span>
+              <span
+                >Broadcasting Junction,<br />Off the Accra-Winneba Rd,<br />Accra,
+                Ghana</span
+              >
+            </li>
+            <li>
+              <span class="fc-icon"><i class="fas fa-phone"></i></span>
+              <span
+                ><a href="tel:+233541406489">054 140 6489</a><br /><a
+                  href="tel:+233204154456"
+                  >020 415 4456</a
+                ></span
+              >
+            </li>
+            <li>
+              <span class="fc-icon"><i class="fas fa-envelope"></i></span>
+              <a href="mailto:NTFLGhana@gmail.com">NTFLGhana@gmail.com</a>
+            </li>
+          </ul>
+          <div class="footer-notice">
+            <i class="fas fa-triangle-exclamation"></i> Goods are not sold on
+            credit
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+          <p>
+            &copy; <span id="footerYear"></span> NTLF Medical. All rights
+            reserved.
+          </p>
+          <div class="footer-legal">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Data first, then page script -->
+    <script src="js/products-data.js"></script>
+    <script src="js/script-products.js"></script>
+  </body>
+</html>

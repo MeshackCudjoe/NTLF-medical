@@ -1,0 +1,961 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      NTLF Medical | Quality Medical &amp; Laboratory Supplies – Ghana
+    </title>
+    <meta
+      name="description"
+      content="NTLF Medical supplies certified medical and laboratory equipment, hospital consumables, diagnostic tools and safety equipment to hospitals, clinics, labs and pharmacies across Ghana."
+    />
+    <meta
+      name="keywords"
+      content="medical supplies Ghana, laboratory equipment Accra, hospital consumables, NTLF Medical, syringes Ghana, gloves Ghana"
+    />
+    <meta
+      property="og:title"
+      content="NTLF Medical | Medical &amp; Laboratory Supplies"
+    />
+    <meta
+      property="og:description"
+      content="Ghana's trusted partner in medical and laboratory supplies."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style-home.css" />
+  </head>
+  <body data-theme="light">
+    <!-- ═══════════════════════════════════════════════
+       PAGE LOADER
+  ════════════════════════════════════════════════ -->
+    <div id="loader" class="loader-overlay" role="status" aria-label="Loading">
+      <div class="loader-content">
+        <div class="loader-logo">
+          <span class="logo-ntlf">NTLF</span
+          ><span class="logo-medical">MEDICAL</span>
+        </div>
+        <div class="loader-bar"><div class="loader-fill"></div></div>
+        <p class="loader-text">Loading…</p>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════
+       TOAST NOTIFICATION
+  ════════════════════════════════════════════════ -->
+    <div id="toast" class="toast" role="alert" aria-live="polite"></div>
+
+    <!-- ═══════════════════════════════════════════════
+       DARK MODE TOGGLE (floating)
+  ════════════════════════════════════════════════ -->
+    <button
+      id="darkToggle"
+      class="dark-toggle"
+      aria-label="Toggle dark mode"
+      title="Toggle dark mode"
+    >
+      <span class="sun-icon" aria-hidden="true"
+        ><i class="fas fa-sun"></i
+      ></span>
+      <span class="moon-icon" aria-hidden="true"
+        ><i class="fas fa-moon"></i
+      ></span>
+    </button>
+
+    <!-- ═══════════════════════════════════════════════
+       SCROLL TO TOP
+  ════════════════════════════════════════════════ -->
+    <button id="scrollTop" class="scroll-top" aria-label="Scroll to top">
+      ↑
+    </button>
+
+    <!-- ═══════════════════════════════════════════════
+       NAVIGATION
+  ════════════════════════════════════════════════ -->
+    <header class="site-header" id="siteHeader">
+      <nav
+        class="navbar container"
+        role="navigation"
+        aria-label="Main navigation"
+      >
+        <!-- Logo -->
+        <a href="index.html" class="nav-logo" aria-label="NTLF Medical home">
+          <div class="logo-mark" aria-hidden="true">
+            <div class="logo-circle"></div>
+            <div class="logo-lines">
+              <span></span><span></span><span></span>
+            </div>
+          </div>
+          <div class="logo-text">
+            <span class="logo-ntlf">NTLF</span>
+            <span class="logo-medical">MEDICAL</span>
+          </div>
+        </a>
+
+        <!-- Desktop nav links -->
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="orders.html">Orders</a></li>
+        </ul>
+
+        <!-- Nav actions -->
+        <div class="nav-actions">
+          <a href="orders.html" class="nav-cart" aria-label="View cart">
+            <span class="cart-icon"><i class="fas fa-cart-shopping"></i></span>
+            <span class="cart-badge" id="cartBadge">0</span>
+          </a>
+          <!-- CTA -->
+          <a href="products.html" class="btn btn-nav">View Catalog</a>
+          <!-- Hamburger -->
+          <button
+            class="hamburger"
+            id="hamburger"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="navLinks"
+          >
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- ═══════════════════════════════════════════════
+       HERO SECTION
+  ════════════════════════════════════════════════ -->
+    <section class="hero" id="hero" aria-label="Hero banner">
+      <!-- Decorative background elements -->
+      <div class="hero-bg" aria-hidden="true">
+        <div class="hero-blob hero-blob-1"></div>
+        <div class="hero-blob hero-blob-2"></div>
+        <div class="hero-blob hero-blob-3"></div>
+        <div class="hero-grid"></div>
+        <div class="hero-dots"></div>
+      </div>
+
+      <div class="container hero-content">
+        <!-- ── Text column ── -->
+        <div class="hero-text" data-animate="fade-up">
+          <div class="hero-badge">
+            <span class="badge-dot" aria-hidden="true"></span>
+            Ghana's Trusted Medical Supplier
+          </div>
+
+          <h1 class="hero-title">
+            Premium Medical &amp;<br />
+            <span class="hero-highlight">Laboratory Supplies</span><br />
+            Delivered to You
+          </h1>
+
+          <p class="hero-subtitle">
+            Supplying hospitals, clinics, laboratories and pharmacies across
+            Ghana with certified medical equipment, consumables, and diagnostic
+            tools — at competitive prices from Broadcasting Junction, Accra.
+          </p>
+
+          <!-- CTA buttons -->
+          <div class="hero-ctas">
+            <a href="products.html" class="btn btn-primary btn-hero">
+              <span>Browse Catalog</span>
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                aria-hidden="true"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+            <a href="contact.html" class="btn btn-outline-hero">Contact Us</a>
+            <a
+              href="https://wa.me/233541406489?text=Hello%2C%20I%27m%20interested%20in%20your%20medical%20supplies."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-wa-hero"
+            >
+              <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+          </div>
+
+          <!-- Stats row -->
+          <div class="hero-stats" role="list">
+            <div class="stat-item" role="listitem">
+              <span
+                class="stat-num"
+                data-target="67"
+                aria-label="67 plus products"
+                >0</span
+              >
+              <span class="stat-plus" aria-hidden="true">+</span>
+              <span class="stat-label">Products</span>
+            </div>
+            <div class="stat-div" aria-hidden="true"></div>
+            <div class="stat-item" role="listitem">
+              <span
+                class="stat-num"
+                data-target="500"
+                aria-label="500 plus clients served"
+                >0</span
+              >
+              <span class="stat-plus" aria-hidden="true">+</span>
+              <span class="stat-label">Clients Served</span>
+            </div>
+            <div class="stat-div" aria-hidden="true"></div>
+            <div class="stat-item" role="listitem">
+              <span
+                class="stat-num"
+                data-target="5"
+                aria-label="5 plus years experience"
+                >0</span
+              >
+              <span class="stat-plus" aria-hidden="true">+</span>
+              <span class="stat-label">Years Experience</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Visual column ── -->
+        <div class="hero-visual" aria-hidden="true">
+          <!-- Floating info cards -->
+          <div class="hero-card hero-card-1">
+            <span class="hcard-icon"><i class="fas fa-hospital-user"></i></span>
+            <div class="hcard-body">
+              <strong>Certified Supplies</strong>
+              <small>ISO Quality Standards</small>
+            </div>
+          </div>
+          <div class="hero-card hero-card-2">
+            <span class="hcard-icon"><i class="fas fa-truck-fast"></i></span>
+            <div class="hcard-body">
+              <strong>Fast Delivery</strong>
+              <small>Accra &amp; Nationwide</small>
+            </div>
+          </div>
+          <div class="hero-card hero-card-3">
+            <span class="hcard-icon"><i class="fas fa-phone-volume"></i></span>
+            <div class="hcard-body">
+              <strong>Call Us Now</strong>
+              <small>054 140 6489</small>
+            </div>
+          </div>
+          <!-- Centre image placeholder -->
+          <div class="hero-img-block">
+            <div class="hero-cross" aria-hidden="true"><span>+</span></div>
+            <p>Medical Supplies</p>
+            <p class="hero-img-sub">Broadcasting Junction, Accra</p>
+          </div>
+        </div>
+      </div>
+      <!-- /.hero-content -->
+
+      <!-- Scroll indicator -->
+      <a
+        href="#featured"
+        class="hero-scroll"
+        aria-label="Scroll to featured products"
+      >
+        <span class="scroll-chevron"></span>
+      </a>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+       TRUST BAR
+  ════════════════════════════════════════════════ -->
+    <div class="trust-bar" aria-label="Key trust points">
+      <div class="container trust-inner">
+        <div class="trust-item">
+          <i class="fas fa-circle-check trust-check"></i>Certified Products
+        </div>
+        <div class="trust-item">
+          <i class="fas fa-circle-check trust-check"></i>Competitive GH₵ Pricing
+        </div>
+        <div class="trust-item">
+          <i class="fas fa-circle-check trust-check"></i>Nationwide Delivery
+          Available
+        </div>
+        <div class="trust-item">
+          <i class="fas fa-circle-check trust-check"></i>Bulk Order Discounts
+        </div>
+        <div class="trust-item">
+          <i class="fas fa-circle-check trust-check"></i>Expert Consultation
+        </div>
+        <div class="trust-item alert-item">
+          <i class="fas fa-triangle-exclamation trust-check"></i>Goods Not Sold
+          On Credit
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════
+       FEATURED PRODUCTS SLIDER
+  ════════════════════════════════════════════════ -->
+    <section class="section featured-section" id="featured">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Top Picks</span>
+          <h2 class="section-title">Featured Products</h2>
+          <p class="section-subtitle">
+            Our most requested medical and laboratory supplies — click any card
+            to view full details and order
+          </p>
+        </div>
+
+        <!-- Slider wrapper -->
+        <div
+          class="slider-wrapper"
+          role="region"
+          aria-label="Featured products slider"
+        >
+          <button
+            class="slider-btn slider-prev"
+            id="sliderPrev"
+            aria-label="Previous slide"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              aria-hidden="true"
+            >
+              <path d="M15 18l-6-6 6-6" />
+            </svg>
+          </button>
+          <div class="slider-outer">
+            <div class="slider-track" id="sliderTrack" role="list"></div>
+          </div>
+          <button
+            class="slider-btn slider-next"
+            id="sliderNext"
+            aria-label="Next slide"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              aria-hidden="true"
+            >
+              <path d="M9 18l6-6-6-6" />
+            </svg>
+          </button>
+        </div>
+
+        <div
+          class="slider-dots"
+          id="sliderDots"
+          role="tablist"
+          aria-label="Slider navigation"
+        ></div>
+
+        <div class="section-cta">
+          <a href="products.html" class="btn btn-primary">
+            View All Products
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              aria-hidden="true"
+            >
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+       SERVICES SECTION
+  ════════════════════════════════════════════════ -->
+    <section class="section services-section" id="services">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">What We Offer</span>
+          <h2 class="section-title">Our Services</h2>
+          <p class="section-subtitle">
+            Comprehensive medical supply solutions for every healthcare need in
+            Ghana
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="service-icon"><i class="fas fa-flask-vial"></i></div>
+            <h3>Laboratory Supplies</h3>
+            <p>
+              Complete range of lab consumables: EDTA tubes, gel tubes, slides,
+              centrifuge tubes, pipettes, specimen containers, and precision
+              laboratory instruments for accurate diagnostics.
+            </p>
+            <a href="products.html?cat=lab-supplies" class="service-link"
+              >Browse Lab Supplies →</a
+            >
+          </article>
+          <article class="service-card">
+            <div class="service-icon"><i class="fas fa-stethoscope"></i></div>
+            <h3>Medical Equipment</h3>
+            <p>
+              From digital thermometers and BP monitors to advanced ECG
+              machines, patient monitors, X-ray units, and anaesthia machines —
+              we supply all grades of medical equipment.
+            </p>
+            <a href="products.html?cat=equipment" class="service-link"
+              >Browse Equipment →</a
+            >
+          </article>
+          <article class="service-card">
+            <div class="service-icon"><i class="fas fa-syringe"></i></div>
+            <h3>Hospital Consumables</h3>
+            <p>
+              Syringes, IV cannulas, catheters, infusion sets, blood transfusion
+              sets, dressings, gloves, and all everyday hospital consumables in
+              bulk at competitive wholesale prices.
+            </p>
+            <a href="products.html?cat=consumables" class="service-link"
+              >Browse Consumables →</a
+            >
+          </article>
+          <article class="service-card">
+            <div class="service-icon"><i class="fas fa-microscope"></i></div>
+            <h3>Diagnostic Tools</h3>
+            <p>
+              Stethoscopes, BP monitors, thermometers, ultrasound gels, vaginal
+              specula, colostomy bags, tourniquets, and other diagnostic tools
+              trusted by medical professionals.
+            </p>
+            <a href="products.html?cat=diagnostics" class="service-link"
+              >Browse Diagnostics →</a
+            >
+          </article>
+          <article class="service-card">
+            <div class="service-icon"><i class="fas fa-hand-dots"></i></div>
+            <h3>Gloves &amp; Safety PPE</h3>
+            <p>
+              Latex, nitrile, and surgical gloves, face masks, nurses caps, and
+              personal protective equipment to keep healthcare workers and
+              patients safe in clinical environments.
+            </p>
+            <a href="products.html?cat=gloves" class="service-link"
+              >Browse Gloves →</a
+            >
+          </article>
+          <article class="service-card">
+            <div class="service-icon"><i class="fas fa-truck-medical"></i></div>
+            <h3>Bulk Supply &amp; Delivery</h3>
+            <p>
+              Special pricing on bulk orders for hospitals, NGOs, and
+              institutions. We can source items not listed in our catalog.
+              Reliable delivery across Accra and nationwide.
+            </p>
+            <a href="contact.html" class="service-link"
+              >Contact for Bulk Orders →</a
+            >
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+       WHY CHOOSE US
+  ════════════════════════════════════════════════ -->
+    <section class="section why-section" id="why">
+      <div class="container why-inner">
+        <!-- Visual side -->
+        <div class="why-visual" aria-hidden="true">
+          <div class="why-img-wrap">
+            <div class="why-img-ph">
+              <div class="why-cross">+</div>
+              <p>NTLF Medical</p>
+              <small>Quality You Trust</small>
+            </div>
+          </div>
+          <div class="why-float-card why-float-top">
+            <span class="wfc-num">67+</span>
+            <span class="wfc-label">Products in Catalog</span>
+          </div>
+          <div class="why-float-card why-float-bottom">
+            <span class="wfc-num">500+</span>
+            <span class="wfc-label">Happy Clients</span>
+          </div>
+        </div>
+
+        <!-- Text side -->
+        <div class="why-text">
+          <span class="section-label">Our Advantage</span>
+          <h2 class="section-title">Why Choose NTLF Medical?</h2>
+          <p class="why-lead">
+            Hospitals and clinics across Ghana trust us as their go-to medical
+            supply partner. Here's why:
+          </p>
+
+          <ul class="why-list" role="list">
+            <li class="why-item">
+              <div class="why-check"><i class="fas fa-check"></i></div>
+              <div>
+                <h4>Verified Quality Products</h4>
+                <p>
+                  All products sourced from certified manufacturers meeting
+                  international medical and ISO quality standards.
+                </p>
+              </div>
+            </li>
+            <li class="why-item">
+              <div class="why-check"><i class="fas fa-check"></i></div>
+              <div>
+                <h4>Competitive &amp; Transparent Pricing</h4>
+                <p>
+                  Clear GH₵ pricing with no hidden charges. Bulk order discounts
+                  available for hospitals and institutions.
+                </p>
+              </div>
+            </li>
+            <li class="why-item">
+              <div class="why-check"><i class="fas fa-check"></i></div>
+              <div>
+                <h4>Wide Product Range</h4>
+                <p>
+                  Over 67 products across gloves, diagnostics, lab supplies,
+                  respiratory care, equipment, and hospital furniture.
+                </p>
+              </div>
+            </li>
+            <li class="why-item">
+              <div class="why-check"><i class="fas fa-check"></i></div>
+              <div>
+                <h4>Expert Consultation</h4>
+                <p>
+                  Our knowledgeable team helps you find the right products and
+                  can source items not in our standard catalog.
+                </p>
+              </div>
+            </li>
+            <li class="why-item">
+              <div class="why-check"><i class="fas fa-check"></i></div>
+              <div>
+                <h4>Custom Orders Welcome</h4>
+                <p>
+                  Can't find what you need? Contact us — we source specialized
+                  medical and lab items not listed in our catalog.
+                </p>
+              </div>
+            </li>
+          </ul>
+
+          <div class="why-actions">
+            <a href="about.html" class="btn btn-primary">Learn More About Us</a>
+            <a href="contact.html" class="btn btn-outline">Get a Quote</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+       ANIMATED STATS
+  ════════════════════════════════════════════════ -->
+    <section class="stats-section" aria-label="Company statistics">
+      <div class="container stats-grid">
+        <div class="stat-card" data-target="67" data-suffix="+">
+          <div class="sc-icon"><i class="fas fa-boxes-stacked"></i></div>
+          <div class="sc-num">0+</div>
+          <div class="sc-label">Products Available</div>
+        </div>
+        <div class="stat-card" data-target="500" data-suffix="+">
+          <div class="sc-icon"><i class="fas fa-hospital"></i></div>
+          <div class="sc-num">0+</div>
+          <div class="sc-label">Healthcare Clients</div>
+        </div>
+        <div class="stat-card" data-target="5" data-suffix="+">
+          <div class="sc-icon"><i class="fas fa-calendar-check"></i></div>
+          <div class="sc-num">0+</div>
+          <div class="sc-label">Years in Business</div>
+        </div>
+        <div class="stat-card" data-target="99" data-suffix="%">
+          <div class="sc-icon"><i class="fas fa-star"></i></div>
+          <div class="sc-num">0%</div>
+          <div class="sc-label">Client Satisfaction</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+       TESTIMONIALS
+  ════════════════════════════════════════════════ -->
+    <section class="section testimonials-section" id="testimonials">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Client Reviews</span>
+          <h2 class="section-title">What Our Clients Say</h2>
+          <p class="section-subtitle">
+            Trusted by healthcare professionals across Ghana
+          </p>
+        </div>
+
+        <div class="testimonials-grid">
+          <article class="tcard">
+            <div class="tcard-top">
+              <div class="tcard-stars" aria-label="5 stars">★★★★★</div>
+              <span class="tcard-quote" aria-hidden="true">"</span>
+            </div>
+            <p class="tcard-text">
+              NTLF Medical has been our go-to supplier for over 3 years. Quality
+              of their lab consumables is consistently excellent, and pricing is
+              very competitive for bulk orders. I recommend them to every lab
+              manager I know.
+            </p>
+            <footer class="tcard-author">
+              <div class="author-av" aria-hidden="true">RA</div>
+              <div>
+                <strong>Dr. Raymond Asante</strong>
+                <span>Chief Laboratory Scientist, Accra Regional Hospital</span>
+              </div>
+            </footer>
+          </article>
+
+          <article class="tcard tcard-featured">
+            <div class="tcard-top">
+              <div class="tcard-stars" aria-label="5 stars">★★★★★</div>
+              <span class="tcard-quote" aria-hidden="true">"</span>
+            </div>
+            <p class="tcard-text">
+              We source all our gloves, syringes, and IV supplies from NTLF
+              Medical. Delivery is always on time and the team is very
+              responsive. The prices are the best I've found in Accra for
+              hospital-grade supplies.
+            </p>
+            <footer class="tcard-author">
+              <div class="author-av" aria-hidden="true">NK</div>
+              <div>
+                <strong>Nurse Kofi Mensah</strong>
+                <span>Head Nurse, Kaneshie Polyclinic, Accra</span>
+              </div>
+            </footer>
+          </article>
+
+          <article class="tcard">
+            <div class="tcard-top">
+              <div class="tcard-stars" aria-label="5 stars">★★★★★</div>
+              <span class="tcard-quote" aria-hidden="true">"</span>
+            </div>
+            <p class="tcard-text">
+              Their medical equipment prices are the best in Accra. We ordered a
+              patient monitor and ECG machine — both delivered in excellent
+              condition with proper documentation. Outstanding service from a
+              reliable company.
+            </p>
+            <footer class="tcard-author">
+              <div class="author-av" aria-hidden="true">SA</div>
+              <div>
+                <strong>Samuel Acheampong</strong>
+                <span>Administrator, Faith Medical Centre, Accra</span>
+              </div>
+            </footer>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+       NEWSLETTER
+  ════════════════════════════════════════════════ -->
+    <section class="newsletter-section" id="newsletter">
+      <div class="container newsletter-inner">
+        <div class="newsletter-text">
+          <h2>Stay Updated with Our Latest Products &amp; Offers</h2>
+          <p>
+            Subscribe to receive new arrivals, price updates, and special offers
+            for healthcare professionals.
+          </p>
+        </div>
+        <form
+          class="newsletter-form"
+          id="newsletterForm"
+          novalidate
+          aria-label="Newsletter subscription"
+        >
+          <label for="nlEmail" class="visually-hidden">Email address</label>
+          <input
+            type="email"
+            id="nlEmail"
+            name="email"
+            placeholder="Enter your email address"
+            required
+            autocomplete="email"
+          />
+          <button type="submit" class="btn btn-nl">Subscribe</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+       FAQ SECTION
+  ════════════════════════════════════════════════ -->
+    <section class="section faq-section" id="faq">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Common Questions</span>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <p class="section-subtitle">
+            Everything you need to know about ordering from NTLF Medical
+          </p>
+        </div>
+
+        <div class="faq-grid">
+          <div class="faq-list">
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">
+                Do you sell on credit?
+                <span class="faq-arrow"
+                  ><i class="fas fa-chevron-down"></i
+                ></span>
+              </button>
+              <div class="faq-a" role="region">
+                <p>
+                  No. All goods are sold strictly on cash-and-carry basis.
+                  <strong>Goods are not sold on credit</strong> — payment is
+                  required at the time of purchase or delivery.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">
+                Can you supply items not on your price list?
+                <span class="faq-arrow"
+                  ><i class="fas fa-chevron-down"></i
+                ></span>
+              </button>
+              <div class="faq-a" role="region">
+                <p>
+                  Absolutely. If you need any item not shown on our catalog,
+                  contact us and we will do our best to source it. We supply a
+                  wide range beyond what is listed on this website.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">
+                Do you offer bulk pricing for hospitals?
+                <span class="faq-arrow"
+                  ><i class="fas fa-chevron-down"></i
+                ></span>
+              </button>
+              <div class="faq-a" role="region">
+                <p>
+                  Yes! We offer competitive bulk pricing for hospitals, clinics,
+                  NGOs, and institutions. Contact us with your order quantity
+                  and we will provide a custom quote.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-list">
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">
+                Do you deliver outside Accra?
+                <span class="faq-arrow"
+                  ><i class="fas fa-chevron-down"></i
+                ></span>
+              </button>
+              <div class="faq-a" role="region">
+                <p>
+                  Yes, we arrange deliveries nationwide. Delivery costs depend
+                  on your location and order size. Contact us on 054 140 6489 to
+                  arrange your specific delivery.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">
+                Are your products certified?
+                <span class="faq-arrow"
+                  ><i class="fas fa-chevron-down"></i
+                ></span>
+              </button>
+              <div class="faq-a" role="region">
+                <p>
+                  Yes. All our products are sourced from certified manufacturers
+                  and meet international medical standards. Product
+                  documentation and certificates can be provided on request.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">
+                What are your business hours?
+                <span class="faq-arrow"
+                  ><i class="fas fa-chevron-down"></i
+                ></span>
+              </button>
+              <div class="faq-a" role="region">
+                <p>
+                  We are open Monday to Friday 8am – 6pm and Saturday 9am – 4pm.
+                  You can also reach us by phone and WhatsApp outside these
+                  hours for urgent enquiries.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════════════ -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="container footer-grid">
+        <!-- Brand column -->
+        <div class="footer-brand">
+          <a
+            href="index.html"
+            class="footer-logo"
+            aria-label="NTLF Medical home"
+          >
+            <div class="logo-mark small" aria-hidden="true">
+              <div class="logo-circle"></div>
+              <div class="logo-lines">
+                <span></span><span></span><span></span>
+              </div>
+            </div>
+            <div class="logo-text">
+              <span class="logo-ntlf">NTLF</span>
+              <span class="logo-medical">MEDICAL</span>
+            </div>
+          </a>
+          <p class="footer-tagline">
+            Your Trusted Medical &amp; Laboratory Supplies Partner in Ghana.
+            Serving healthcare professionals since 2019.
+          </p>
+          <div class="footer-socials" aria-label="Social media links">
+            <a href="#" class="social-link" aria-label="Facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" class="social-link" aria-label="Twitter"
+              ><i class="fab fa-x-twitter"></i
+            ></a>
+            <a href="#" class="social-link" aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a
+              href="https://wa.me/233541406489?text=Hello%2C%20I%27m%20interested%20in%20your%20medical%20supplies."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-link wa"
+              aria-label="WhatsApp"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+          </div>
+        </div>
+
+        <!-- Quick links -->
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="products.html">Products Catalog</a></li>
+            <li><a href="orders.html">My Orders</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="admin.html">Admin Panel</a></li>
+          </ul>
+        </div>
+
+        <!-- Product categories -->
+        <div class="footer-col">
+          <h4>Product Categories</h4>
+          <ul>
+            <li><a href="products.html?cat=gloves">Gloves &amp; PPE</a></li>
+            <li>
+              <a href="products.html?cat=syringes">Syringes &amp; Cannula</a>
+            </li>
+            <li>
+              <a href="products.html?cat=lab-supplies">Laboratory Supplies</a>
+            </li>
+            <li><a href="products.html?cat=diagnostics">Diagnostics</a></li>
+            <li><a href="products.html?cat=equipment">Medical Equipment</a></li>
+            <li>
+              <a href="products.html?cat=furniture">Hospital Furniture</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <ul class="footer-contact">
+            <li>
+              <span class="fc-icon"><i class="fas fa-location-dot"></i></span>
+              <span
+                >Broadcasting Junction,<br />Off the Accra-Winneba Rd,<br />Accra,
+                Ghana</span
+              >
+            </li>
+            <li>
+              <span class="fc-icon"><i class="fas fa-phone"></i></span>
+              <span
+                ><a href="tel:+233541406489">054 140 6489</a><br /><a
+                  href="tel:+233204154456"
+                  >020 415 4456</a
+                ></span
+              >
+            </li>
+            <li>
+              <span class="fc-icon"><i class="fas fa-envelope"></i></span>
+              <a href="mailto:NTFLGhana@gmail.com">NTFLGhana@gmail.com</a>
+            </li>
+            <li>
+              <span class="fc-icon"><i class="fas fa-clock"></i></span>
+              <span>Mon–Fri: 8am–6pm<br />Sat: 9am–4pm</span>
+            </li>
+          </ul>
+          <div class="footer-notice" role="note">
+            <strong>⚠️ Goods are not sold on credit</strong>
+          </div>
+        </div>
+      </div>
+      <!-- /.footer-grid -->
+
+      <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+          <p>
+            &copy; <span id="footerYear"></span> NTLF Medical. All rights
+            reserved.
+          </p>
+          <div class="footer-legal">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="admin.html">Admin</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts — data must load before page script -->
+    <script src="js/products-data.js"></script>
+    <script src="js/script-home.js"></script>
+  </body>
+</html>
