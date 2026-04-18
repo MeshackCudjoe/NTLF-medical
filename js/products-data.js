@@ -251,14 +251,14 @@ const NTLF_PRODUCTS = [
   },
   {
     id: 6,
-    name: "2ml Syringes",
+    name: "10ml Syringes",
     category: "syringes",
     price: 35.0,
     quantity: "100pcs",
     description:
-      "Single-use sterile 2ml syringes with clear barrel for accurate volume reading. Compatible with all standard Luer-lock needles.",
+      "Single-use sterile 10ml syringes with clear barrel for accurate volume reading. Compatible with all standard Luer-lock needles.",
     specs: [
-      "Volume: 2 ml",
+      "Volume: 10 ml",
       "Tip: Luer-lock",
       "Sterile: Yes",
       "Quantity: 100 pcs per box",
@@ -274,39 +274,39 @@ const NTLF_PRODUCTS = [
     featured: false,
     badge: null,
   },
-  {
-    id: 7,
-    name: "5ml Syringes",
-    category: "syringes",
-    price: 39.0,
-    quantity: "100pcs",
-    description:
-      "Sterile 5ml syringes with precise graduation markings. Suitable for injections, aspirations, and medication administration.",
-    specs: [
-      "Volume: 5 ml",
-      "Tip: Luer-lock",
-      "Sterile: Yes",
-      "Quantity: 100 pcs per box",
-      "Use: Single use",
-    ],
-    image: "assets/images/products/27.jpeg",
-    images: [
-      "assets/images/products/27.jpeg",
-      "assets/images/products/syringe2.jpg",
-      "assets/images/products/syringe3.jpg",
-      "assets/images/products/syringe4.jpg",
-    ],
-    featured: false,
-    badge: null,
-  },
+  // {
+  //   id: 7,
+  //   name: "5ml Syringes",
+  //   category: "syringes",
+  //   price: 39.0,
+  //   quantity: "100pcs",
+  //   description:
+  //     "Sterile 5ml syringes with precise graduation markings. Suitable for injections, aspirations, and medication administration.",
+  //   specs: [
+  //     "Volume: 5 ml",
+  //     "Tip: Luer-lock",
+  //     "Sterile: Yes",
+  //     "Quantity: 100 pcs per box",
+  //     "Use: Single use",
+  //   ],
+  //   image: "assets/images/products/27.jpeg",
+  //   images: [
+  //     "assets/images/products/27.jpeg",
+  //     "assets/images/products/syringe2.jpg",
+  //     "assets/images/products/syringe3.jpg",
+  //     "assets/images/products/syringe4.jpg",
+  //   ],
+  //   featured: false,
+  //   badge: null,
+  // },
   {
     id: 8,
-    name: "10ml Syringes",
+    name: "60ml Syringes",
     category: "syringes",
     price: 55.0,
     quantity: "100pcs",
     description:
-      "Sterile 10ml syringes with smooth plunger action for easy operation. Widely used for IV medication administration and flushing.",
+      "Sterile 60ml syringes with smooth plunger action for easy operation. Widely used for IV medication administration and flushing.",
     specs: [
       "Volume: 10 ml",
       "Tip: Luer-lock",
@@ -317,7 +317,7 @@ const NTLF_PRODUCTS = [
     image: "assets/images/products/2.jpeg",
     images: [
       "assets/images/products/2.jpeg",
-      "assets/images/products/syringe4.jpg",
+      "assets/images/products/syringe6.jpg",
       "assets/images/products/syringe5.jpg",
       "assets/images/products/syringe6.jpg",
     ],
