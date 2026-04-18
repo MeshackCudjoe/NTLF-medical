@@ -177,16 +177,50 @@ function buildGallery(product) {
 
   if (!mainImg || !thumbsCont) return;
 
-  /* Set main image */
-  mainImg.src = product.image || "";
-  mainImg.alt = product.name;
+  // Get images array (already has fallback from getAllProducts)
+  const images = product.images || [
+    product.image,
+    product.image,
+    product.image,
+    product.image,
+  ];
+
+  // Set main image with fade effect
+  function setMainImage(src, alt) {
+    if (!src) return;
+    // Add fade-out class
+    mainImg.style.opacity = "0";
+    setTimeout(function () {
+      mainImg.src = src;
+      mainImg.alt = alt || product.name;
+      mainImg.style.display = "";
+      // Remove any placeholder if exists
+      const placeholder = mainImg.parentElement.querySelector(
+        ".gallery-placeholder",
+      );
+      if (placeholder) placeholder.remove();
+      // Fade back in
+      mainImg.style.opacity = "1";
+    }, 150);
+  }
+
+  // Handle image load error
   mainImg.onerror = function () {
     this.style.display = "none";
-    const ph = document.createElement("div");
-    ph.className = "gallery-placeholder";
-    ph.innerHTML = '<i class="fas fa-box-open"></i><p>' + product.name + "</p>";
-    this.parentElement.appendChild(ph);
+    const existingPh = this.parentElement.querySelector(".gallery-placeholder");
+    if (!existingPh) {
+      const ph = document.createElement("div");
+      ph.className = "gallery-placeholder";
+      ph.innerHTML =
+        '<i class="fas fa-box-open"></i><p>' + product.name + "</p>";
+      this.parentElement.appendChild(ph);
+    }
   };
+
+  // Set initial main image
+  mainImg.style.transition = "opacity 0.2s ease";
+  mainImg.style.opacity = "1";
+  setMainImage(images[0], product.name);
 
   /* Badge */
   const badge = document.getElementById("galleryBadge");
@@ -195,43 +229,90 @@ function buildGallery(product) {
     badge.style.display = badge.textContent ? "block" : "none";
   }
 
-  /* Build 4 thumbnails (same image — replace with multi-image paths if available) */
-  const thumbUrls = [
-    product.image,
-    product.image,
-    product.image,
-    product.image,
-  ];
+  /* Build thumbnails from images array */
   thumbsCont.innerHTML = "";
-  thumbUrls.forEach((src, i) => {
+  let currentIndex = 0;
+
+  images.forEach((src, i) => {
     const div = document.createElement("div");
     div.className = "gallery-thumb" + (i === 0 ? " active" : "");
+    div.setAttribute("data-index", i);
+    div.setAttribute("role", "button");
+    div.setAttribute("tabindex", "0");
+    div.setAttribute(
+      "aria-label",
+      "View image " + (i + 1) + " of " + images.length,
+    );
     div.title = product.name + " — view " + (i + 1);
-    div.innerHTML = `<img src="${src || ""}" alt="View ${i + 1}" onerror="this.style.opacity='0.3'" />`;
-    div.addEventListener("click", () => {
-      mainImg.src = src || "";
-      mainImg.style.display = "";
-      document
-        .querySelectorAll(".gallery-thumb")
-        .forEach((t) => t.classList.remove("active"));
+    div.innerHTML = `<img src="${src || ""}" alt="Thumbnail ${i + 1}" onerror="this.style.opacity='0.3'" />`;
+
+    div.addEventListener("click", function () {
+      if (currentIndex === i) return;
+      currentIndex = i;
+      setMainImage(images[i], product.name);
+      document.querySelectorAll(".gallery-thumb").forEach(function (t) {
+        t.classList.remove("active");
+      });
       div.classList.add("active");
     });
+
+    // Keyboard navigation for thumbnails
+    div.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        div.click();
+      }
+    });
+
     thumbsCont.appendChild(div);
   });
 
+  /* Keyboard navigation: left/right arrows to switch images */
+  function handleKeyboardNav(e) {
+    if (
+      !zoomModal ||
+      !zoomModal.classList ||
+      !zoomModal.classList.contains("active")
+    ) {
+      if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        const prevIndex =
+          currentIndex === 0 ? images.length - 1 : currentIndex - 1;
+        const prevThumb = document.querySelector(
+          '.gallery-thumb[data-index="' + prevIndex + '"]',
+        );
+        if (prevThumb) prevThumb.click();
+      } else if (e.key === "ArrowRight") {
+        e.preventDefault();
+        const nextIndex =
+          currentIndex === images.length - 1 ? 0 : currentIndex + 1;
+        const nextThumb = document.querySelector(
+          '.gallery-thumb[data-index="' + nextIndex + '"]',
+        );
+        if (nextThumb) nextThumb.click();
+      }
+    }
+  }
+
+  document.removeEventListener("keydown", handleKeyboardNav);
+  document.addEventListener("keydown", handleKeyboardNav);
+
   /* Zoom on click */
-  mainWrap?.addEventListener("click", () => {
-    if (!product.image) return;
+  mainWrap?.addEventListener("click", function () {
+    if (!images[currentIndex]) return;
     if (zoomedImg) zoomedImg.src = mainImg.src;
     if (zoomModal) zoomModal.classList.add("active");
   });
-  document.getElementById("zoomClose")?.addEventListener("click", () => {
+
+  document.getElementById("zoomClose")?.addEventListener("click", function () {
     zoomModal?.classList.remove("active");
   });
-  zoomModal?.addEventListener("click", (e) => {
+
+  zoomModal?.addEventListener("click", function (e) {
     if (e.target === zoomModal) zoomModal.classList.remove("active");
   });
-  document.addEventListener("keydown", (e) => {
+
+  document.addEventListener("keydown", function (e) {
     if (e.key === "Escape") zoomModal?.classList.remove("active");
   });
 }

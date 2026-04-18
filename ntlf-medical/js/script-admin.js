@@ -20,7 +20,7 @@
 
 "use strict";
 
-var ADMIN_PW = "zhiggy";
+var ADMIN_PW = "admin123";
 var SESSION_KEY = "ntlf-admin-session";
 var CUSTOM_KEY = "ntlf-admin-products";
 var ORDERS_KEY = "ntlf-orders";

@@ -651,6 +651,35 @@ body:not([data-theme]) .moon-icon {
   object-fit: cover;
 }
 
+/* Smooth image transition */
+.main-img {
+  transition: opacity 0.2s ease-in-out;
+}
+
+/* Active thumbnail visual indicator */
+.gallery-thumb.active {
+  border: 3px solid var(--primary);
+  transform: scale(1.02);
+  box-shadow: 0 0 0 2px rgba(26, 86, 219, 0.2);
+}
+
+/* Thumbnail hover effect */
+.gallery-thumb {
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.gallery-thumb:hover:not(.active) {
+  border-color: var(--text-muted);
+  transform: translateY(-2px);
+}
+
+/* Keyboard focus indicator for thumbnails */
+.gallery-thumb:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-color: transparent;
+}
 /* Zoom Modal */
 .zoom-modal {
   display: none;
