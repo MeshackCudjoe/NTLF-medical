@@ -1280,3 +1280,30 @@ body:not([data-theme]) .moon-icon {
     font-size: 2rem;
   }
 }
+
+/* UPDATED HERO SECTION — background image with dark overlay */
+.page-hero {
+  background-image: url("https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1920&q=80&auto=format&fit=crop") !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+/* NEW STYLES ADDED — pseudo-element overlay keeps text readable */
+.page-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    145deg,
+    rgba(8, 14, 32, 0.9) 0%,
+    rgba(10, 37, 64, 0.87) 40%,
+    rgba(13, 53, 97, 0.85) 80%
+  );
+  z-index: 1;
+}
+.page-hero-bg,
+.page-hero-content,
+.page-hero__container {
+  position: relative;
+  z-index: 2;
+}

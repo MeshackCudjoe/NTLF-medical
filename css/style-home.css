@@ -648,20 +648,32 @@ body:not([data-theme]) .moon-icon {
 /* ═══════════════════════════════════════════════════════════
    HERO
 ════════════════════════════════════════════════════════════ */
+/* UPDATED HERO SECTION */
 .hero {
   min-height: 100vh;
   display: flex;
   align-items: center;
   position: relative;
   overflow: hidden;
+  padding-top: var(--header-h);
+  background-image: url("/room2.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* NEW STYLES ADDED — overlay so image is subtle, text stays clear */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
   background: linear-gradient(
     145deg,
-    #080e20 0%,
-    #0a2540 40%,
-    #0d3561 70%,
-    #061828 100%
+    rgba(8, 14, 32, 0.93) 0%,
+    rgba(10, 37, 64, 0.9) 40%,
+    rgba(13, 53, 97, 0.88) 70%,
+    rgba(6, 24, 40, 0.95) 100%
   );
-  padding-top: var(--header-h);
 }
 
 /* Background decorations */
@@ -670,6 +682,7 @@ body:not([data-theme]) .moon-icon {
   inset: 0;
   overflow: hidden;
   pointer-events: none;
+  z-index: 2;
 }
 .hero-blob {
   position: absolute;
@@ -734,6 +747,8 @@ body:not([data-theme]) .moon-icon {
 
 /* Content grid */
 .hero-content {
+  position: relative;
+  z-index: 3;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 72px;
@@ -1008,6 +1023,8 @@ body:not([data-theme]) .moon-icon {
    TRUST BAR
 ════════════════════════════════════════════════════════════ */
 .trust-bar {
+  position: relative;
+  z-index: 3;
   background: var(--navy);
   padding: 18px 0;
   border-bottom: 3px solid var(--green);
@@ -2001,20 +2018,6 @@ body:not([data-theme]) .moon-icon {
   .nav-links a {
     padding: 12px 16px;
     border-radius: var(--r-sm);
-  }
-  /* ── FIX: force dark text in open mobile menu regardless of hero/scroll state ── */
-  .nav-links.open a,
-  .site-header:not(.scrolled) .nav-links.open a {
-    color: var(--gray-800, #1e293b) !important;
-  }
-  [data-theme="dark"] .nav-links.open a,
-  [data-theme="dark"] .site-header:not(.scrolled) .nav-links.open a {
-    color: var(--gray-100, #f1f5f9) !important;
-  }
-  .nav-links.open a:hover,
-  .site-header:not(.scrolled) .nav-links.open a:hover {
-    color: var(--blue, #1a56db) !important;
-    background: var(--blue-light, #e8f0fe);
   }
   .hamburger {
     display: flex;

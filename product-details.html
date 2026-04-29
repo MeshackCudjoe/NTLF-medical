@@ -1,332 +1,465 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Product Details | NTLF Medical</title>
-  <meta name="description" content="View detailed information about our medical and laboratory supply products at NTLF Medical." />
-  <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="css/style-details.css" />
-</head>
-<body data-theme="light">
-
-  <!-- ===== LOADING SCREEN ===== -->
-  <div id="loader" class="loader-overlay" role="status" aria-label="Loading">
-    <div class="loader-content">
-      <div class="loader-logo"><span class="logo-ntlf">NTLF</span><span class="logo-medical">MEDICAL</span></div>
-      <div class="loader-bar"><div class="loader-fill"></div></div>
-      <p class="loader-text">Loading product…</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Details | NTLF Medical</title>
+    <meta
+      name="description"
+      content="View detailed information about our medical and laboratory supply products at NTLF Medical."
+    />
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico" />
+    <link rel="shortcut icon" type="logo-icon" href="ntlf.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style-details.css" />
+  </head>
+  <body data-theme="light">
+    <!-- ===== LOADING SCREEN ===== -->
+    <div id="loader" class="loader-overlay" role="status" aria-label="Loading">
+      <div class="loader-content">
+        <div class="loader-logo">
+          <span class="logo-ntlf">NTLF</span
+          ><span class="logo-medical">MEDICAL</span>
+        </div>
+        <div class="loader-bar"><div class="loader-fill"></div></div>
+        <p class="loader-text">Loading product…</p>
+      </div>
     </div>
-  </div>
 
-  <!-- ===== SCROLL TO TOP ===== -->
-  <button id="scrollTop" class="scroll-top" aria-label="Scroll to top">
-    <i class="fas fa-chevron-up"></i>
-  </button>
+    <!-- ===== SCROLL TO TOP ===== -->
+    <button id="scrollTop" class="scroll-top" aria-label="Scroll to top">
+      <i class="fas fa-chevron-up"></i>
+    </button>
 
-  <!-- ===== TOAST ===== -->
-  <div id="toast" class="toast" aria-live="polite"></div>
+    <!-- ===== TOAST ===== -->
+    <div id="toast" class="toast" aria-live="polite"></div>
 
-  <!-- ===== NAVIGATION ===== -->
-  <header class="site-header scrolled" id="siteHeader">
-  <nav class="navbar container" role="navigation" aria-label="Main navigation">
-      <a href="index.html" class="nav-logo" aria-label="NTLF Medical home">
-        <div class="logo-mark" aria-hidden="true">
-          <div class="logo-circle"></div>
-          <div class="logo-lines"><span></span><span></span><span></span></div>
-        </div>
-        <div class="logo-text">
-          <span class="logo-ntlf">NTLF</span>
-          <span class="logo-medical">MEDICAL</span>
-        </div>
-      </a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="products.html" class="active">Products</a></li>
-        <li><a href="orders.html">Orders</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-      <div class="nav-actions">
-        <button id="darkToggle" class="dark-toggle" aria-label="Toggle dark mode">
-          <span class="sun-icon"><i class="fas fa-sun"></i></span>
-          <span class="moon-icon"><i class="fas fa-moon"></i></span>
-        </button>
-        <a href="orders.html" class="nav-cart" aria-label="View cart">
-          <i class="fas fa-cart-shopping"></i>
-          <span class="cart-badge" id="cartCount">0</span>
+    <!-- ===== NAVIGATION ===== -->
+    <header class="site-header scrolled" id="siteHeader">
+      <nav
+        class="navbar container"
+        role="navigation"
+        aria-label="Main navigation"
+      >
+        <a href="index.html" class="nav-logo" aria-label="NTLF Medical home">
+          <div class="logo-mark" aria-hidden="true">
+            <div class="logo-circle"></div>
+            <div class="logo-lines">
+              <span></span><span></span><span></span>
+            </div>
+          </div>
+          <div class="logo-text">
+            <span class="logo-ntlf">NTLF</span>
+            <span class="logo-medical">MEDICAL</span>
+          </div>
         </a>
-        <a href="products.html" class="btn btn-nav">Order Now</a>
-        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-  </nav>
-  </header>
-
-  <!-- ===== BREADCRUMB ===== -->
-  <div class="breadcrumb-bar">
-    <div class="container">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="index.html">Home</a><span aria-hidden="true"> / </span><a href="products.html">Products</a><span aria-hidden="true"> / </span><span id="breadcrumbProduct">Product Details</span>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="products.html" class="active">Products</a></li>
+          <li><a href="orders.html">Orders</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button
+            id="darkToggle"
+            class="dark-toggle"
+            aria-label="Toggle dark mode"
+          >
+            <span class="sun-icon"><i class="fas fa-sun"></i></span>
+            <span class="moon-icon"><i class="fas fa-moon"></i></span>
+          </button>
+          <a href="orders.html" class="nav-cart" aria-label="View cart">
+            <i class="fas fa-cart-shopping"></i>
+            <span class="cart-badge" id="cartCount">0</span>
+          </a>
+          <a href="products.html" class="btn btn-nav">Order Now</a>
+          <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
       </nav>
-    </div>
-  </div>
+    </header>
 
-  <!-- ===== PRODUCT DETAILS SECTION ===== -->
-  <section class="details-section">
-    <div class="container">
-
-      <!-- Back Button -->
-      <a href="products.html" class="back-btn">
-        <i class="fas fa-arrow-left"></i> Back to Products
-      </a>
-
-      <!-- Product Not Found Message (hidden by default) -->
-      <div id="notFound" class="not-found" style="display:none;">
-        <i class="fas fa-box-open"></i>
-        <h2>Product Not Found</h2>
-        <p>The product you are looking for does not exist or may have been removed.</p>
-        <a href="products.html" class="btn btn-primary">Browse All Products</a>
+    <!-- ===== BREADCRUMB ===== -->
+    <div class="breadcrumb-bar">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a><span aria-hidden="true"> / </span
+          ><a href="products.html">Products</a
+          ><span aria-hidden="true"> / </span
+          ><span id="breadcrumbProduct">Product Details</span>
+        </nav>
       </div>
+    </div>
 
-      <!-- Main Product Layout -->
-      <div id="productContent" class="product-content">
+    <!-- ===== PRODUCT DETAILS SECTION ===== -->
+    <section class="details-section">
+      <div class="container">
+        <!-- Back Button -->
+        <a href="products.html" class="back-btn">
+          <i class="fas fa-arrow-left"></i> Back to Products
+        </a>
 
-        <!-- LEFT: Image Gallery -->
-        <div class="product-gallery">
-          <!-- Main Image -->
-          <div class="gallery-main">
-            <div class="gallery-badge" id="galleryBadge"></div>
-            <div class="main-image-wrap" id="mainImageWrap">
-              <img id="mainImage" src="" alt="Product Image" class="main-img" />
-              <div class="zoom-overlay" id="zoomOverlay">
-                <i class="fas fa-search-plus"></i>
+        <!-- Product Not Found Message (hidden by default) -->
+        <div id="notFound" class="not-found" style="display: none">
+          <i class="fas fa-box-open"></i>
+          <h2>Product Not Found</h2>
+          <p>
+            The product you are looking for does not exist or may have been
+            removed.
+          </p>
+          <a href="products.html" class="btn btn-primary"
+            >Browse All Products</a
+          >
+        </div>
+
+        <!-- Main Product Layout -->
+        <div id="productContent" class="product-content">
+          <!-- LEFT: Image Gallery -->
+          <div class="product-gallery">
+            <!-- Main Image -->
+            <div class="gallery-main">
+              <div class="gallery-badge" id="galleryBadge"></div>
+              <div class="main-image-wrap" id="mainImageWrap">
+                <img
+                  id="mainImage"
+                  src=""
+                  alt="Product Image"
+                  class="main-img"
+                />
+                <div class="zoom-overlay" id="zoomOverlay">
+                  <i class="fas fa-search-plus"></i>
+                </div>
+              </div>
+            </div>
+            <!-- Thumbnails -->
+            <div class="gallery-thumbs" id="galleryThumbs">
+              <!-- Injected by JS -->
+            </div>
+            <!-- Zoom Modal -->
+            <div
+              class="zoom-modal"
+              id="zoomModal"
+              role="dialog"
+              aria-modal="true"
+              aria-label="Image zoom"
+            >
+              <button class="zoom-close" id="zoomClose" aria-label="Close zoom">
+                <i class="fas fa-times"></i>
+              </button>
+              <img id="zoomedImage" src="" alt="Zoomed product image" />
+            </div>
+          </div>
+
+          <!-- RIGHT: Product Info -->
+          <div class="product-info">
+            <div class="product-category-tag" id="productCategory"></div>
+            <h1 class="product-name" id="productName">Loading...</h1>
+
+            <div class="product-meta">
+              <div class="product-rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i> <i class="fas fa-star"></i
+                ><i class="fas fa-star-half-alt"></i>
+                <span>(4.5 / 5)</span>
+              </div>
+              <div class="product-sku">SKU: <span id="productSKU"></span></div>
+            </div>
+
+            <div class="product-price-block">
+              <div class="product-price" id="productPrice"></div>
+              <div class="product-unit" id="productUnit"></div>
+            </div>
+
+            <div class="product-availability">
+              <span class="avail-dot"></span>
+              <span>In Stock &amp; Ready to Ship</span>
+            </div>
+
+            <div class="product-description" id="productDescription"></div>
+
+            <!-- Quantity + Add to Cart -->
+            <div class="product-order-block">
+              <div class="qty-control">
+                <button
+                  class="qty-btn"
+                  id="qtyMinus"
+                  aria-label="Decrease quantity"
+                >
+                  −
+                </button>
+                <input
+                  type="number"
+                  id="qtyInput"
+                  value="1"
+                  min="1"
+                  max="999"
+                  aria-label="Quantity"
+                />
+                <button
+                  class="qty-btn"
+                  id="qtyPlus"
+                  aria-label="Increase quantity"
+                >
+                  +
+                </button>
+              </div>
+              <button
+                class="btn btn-primary btn-lg add-cart-btn"
+                id="addToCartBtn"
+              >
+                <i class="fas fa-cart-plus"></i> Add to Cart
+              </button>
+            </div>
+
+            <div class="product-actions-row">
+              <a
+                id="whatsappBtn"
+                href="#"
+                target="_blank"
+                class="btn btn-whatsapp"
+              >
+                <i class="fab fa-whatsapp"></i> Order via WhatsApp
+              </a>
+              <a href="tel:0541406489" class="btn btn-outline">
+                <i class="fas fa-phone"></i> Call to Order
+              </a>
+            </div>
+
+            <!-- Specs Table -->
+            <div class="product-specs" id="productSpecs">
+              <h3>Product Specifications</h3>
+              <table id="specsTable">
+                <tbody id="specsBody"></tbody>
+              </table>
+            </div>
+
+            <!-- Trust badges -->
+            <div class="trust-badges">
+              <div class="trust-badge">
+                <i class="fas fa-shield-alt"></i><span>Quality Assured</span>
+              </div>
+              <div class="trust-badge">
+                <i class="fas fa-undo"></i><span>Easy Returns</span>
+              </div>
+              <div class="trust-badge">
+                <i class="fas fa-headset"></i><span>Expert Support</span>
               </div>
             </div>
           </div>
-          <!-- Thumbnails -->
-          <div class="gallery-thumbs" id="galleryThumbs">
-            <!-- Injected by JS -->
-          </div>
-          <!-- Zoom Modal -->
-          <div class="zoom-modal" id="zoomModal" role="dialog" aria-modal="true" aria-label="Image zoom">
-            <button class="zoom-close" id="zoomClose" aria-label="Close zoom"><i class="fas fa-times"></i></button>
-            <img id="zoomedImage" src="" alt="Zoomed product image" />
-          </div>
         </div>
+        <!-- end product-content -->
 
-        <!-- RIGHT: Product Info -->
-        <div class="product-info">
-          <div class="product-category-tag" id="productCategory"></div>
-          <h1 class="product-name" id="productName">Loading...</h1>
-
-          <div class="product-meta">
-            <div class="product-rating">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-              <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-              <span>(4.5 / 5)</span>
-            </div>
-            <div class="product-sku">SKU: <span id="productSKU"></span></div>
-          </div>
-
-          <div class="product-price-block">
-            <div class="product-price" id="productPrice"></div>
-            <div class="product-unit" id="productUnit"></div>
-          </div>
-
-          <div class="product-availability">
-            <span class="avail-dot"></span>
-            <span>In Stock &amp; Ready to Ship</span>
-          </div>
-
-          <div class="product-description" id="productDescription"></div>
-
-          <!-- Quantity + Add to Cart -->
-          <div class="product-order-block">
-            <div class="qty-control">
-              <button class="qty-btn" id="qtyMinus" aria-label="Decrease quantity">−</button>
-              <input type="number" id="qtyInput" value="1" min="1" max="999" aria-label="Quantity" />
-              <button class="qty-btn" id="qtyPlus" aria-label="Increase quantity">+</button>
-            </div>
-            <button class="btn btn-primary btn-lg add-cart-btn" id="addToCartBtn">
-              <i class="fas fa-cart-plus"></i> Add to Cart
+        <!-- ===== TABS: Description / Specs / Delivery ===== -->
+        <div class="product-tabs" id="productTabs">
+          <div class="tabs-nav">
+            <button class="tab-btn active" data-tab="description">
+              Full Description
+            </button>
+            <button class="tab-btn" data-tab="specs">Specifications</button>
+            <button class="tab-btn" data-tab="delivery">
+              Delivery &amp; Payment
             </button>
           </div>
-
-          <div class="product-actions-row">
-            <a id="whatsappBtn" href="#" target="_blank" class="btn btn-whatsapp">
-              <i class="fab fa-whatsapp"></i> Order via WhatsApp
-            </a>
-            <a href="tel:0541406489" class="btn btn-outline">
-              <i class="fas fa-phone"></i> Call to Order
-            </a>
+          <div class="tab-content active" id="tab-description">
+            <p id="tabFullDesc"></p>
           </div>
-
-          <!-- Specs Table -->
-          <div class="product-specs" id="productSpecs">
-            <h3>Product Specifications</h3>
-            <table id="specsTable">
-              <tbody id="specsBody"></tbody>
-            </table>
+          <div class="tab-content" id="tab-specs">
+            <ul id="tabSpecsList" class="specs-list"></ul>
           </div>
-
-          <!-- Trust badges -->
-          <div class="trust-badges">
-            <div class="trust-badge"><i class="fas fa-shield-alt"></i><span>Quality Assured</span></div>
-            <div class="trust-badge"><i class="fas fa-undo"></i><span>Easy Returns</span></div>
-            <div class="trust-badge"><i class="fas fa-headset"></i><span>Expert Support</span></div>
-          </div>
-        </div>
-      </div><!-- end product-content -->
-
-      <!-- ===== TABS: Description / Specs / Delivery ===== -->
-      <div class="product-tabs" id="productTabs">
-        <div class="tabs-nav">
-          <button class="tab-btn active" data-tab="description">Full Description</button>
-          <button class="tab-btn" data-tab="specs">Specifications</button>
-          <button class="tab-btn" data-tab="delivery">Delivery &amp; Payment</button>
-        </div>
-        <div class="tab-content active" id="tab-description">
-          <p id="tabFullDesc"></p>
-        </div>
-        <div class="tab-content" id="tab-specs">
-          <ul id="tabSpecsList" class="specs-list"></ul>
-        </div>
-        <div class="tab-content" id="tab-delivery">
-          <div class="delivery-info">
-            <div class="delivery-item">
-              <i class="fas fa-store"></i>
-              <div>
-                <strong>Pickup Available</strong>
-                <p>Collect your order from our store at Broadcasting Junction, Off the Accra-Winneba Rd, Accra.</p>
+          <div class="tab-content" id="tab-delivery">
+            <div class="delivery-info">
+              <div class="delivery-item">
+                <i class="fas fa-store"></i>
+                <div>
+                  <strong>Pickup Available</strong>
+                  <p>
+                    Collect your order from our store at Broadcasting Junction,
+                    Off the Accra-Winneba Rd, Accra.
+                  </p>
+                </div>
+              </div>
+              <div class="delivery-item">
+                <i class="fas fa-phone"></i>
+                <div>
+                  <strong>Call to Confirm Delivery</strong>
+                  <p>
+                    Call <a href="tel:0541406489">054 140 6489</a> or
+                    <a href="tel:0204154456">020 415 4456</a> to arrange
+                    delivery options.
+                  </p>
+                </div>
+              </div>
+              <div class="delivery-item">
+                <i class="fas fa-ban"></i>
+                <div>
+                  <strong>No Credit Sales</strong>
+                  <p>
+                    Please note: goods are not sold on credit. Payment is
+                    required at the time of purchase.
+                  </p>
+                </div>
+              </div>
+              <div class="delivery-item">
+                <i class="fas fa-mobile-alt"></i>
+                <div>
+                  <strong>Mobile Money Accepted</strong>
+                  <p>
+                    We accept cash and mobile money payments. Contact us for
+                    bank transfer details.
+                  </p>
+                </div>
               </div>
             </div>
-            <div class="delivery-item">
-              <i class="fas fa-phone"></i>
-              <div>
-                <strong>Call to Confirm Delivery</strong>
-                <p>Call <a href="tel:0541406489">054 140 6489</a> or <a href="tel:0204154456">020 415 4456</a> to arrange delivery options.</p>
+          </div>
+        </div>
+
+        <!-- ===== RELATED PRODUCTS ===== -->
+        <div class="related-section">
+          <h2 class="related-title">Related Products</h2>
+          <div class="related-grid" id="relatedGrid">
+            <!-- Injected by JS -->
+          </div>
+        </div>
+      </div>
+      <!-- end container -->
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <div class="footer-top">
+        <div class="container">
+          <div class="footer-grid">
+            <div class="footer-brand">
+              <a
+                href="index.html"
+                class="footer-logo"
+                aria-label="NTLF Medical home"
+              >
+                <div class="logo-mark small" aria-hidden="true">
+                  <div class="logo-circle"></div>
+                  <div class="logo-lines">
+                    <span></span><span></span><span></span>
+                  </div>
+                </div>
+                <div class="logo-text">
+                  <span class="logo-ntlf">NTLF</span>
+                  <span class="logo-medical">MEDICAL</span>
+                </div>
+              </a>
+              <p>
+                Your trusted supplier of quality medical and laboratory supplies
+                in Ghana.
+              </p>
+              <div class="social-links">
+                <a href="#" aria-label="Facebook"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a href="#" aria-label="Twitter"
+                  ><i class="fab fa-x-twitter"></i
+                ></a>
+                <a href="#" aria-label="Instagram"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a
+                  href="https://wa.me/233541406489?text=Hello%2C%20I%27m%20interested%20in%20your%20medical%20supplies."
+                  target="_blank"
+                  aria-label="WhatsApp"
+                  ><i class="fab fa-whatsapp"></i
+                ></a>
               </div>
             </div>
-            <div class="delivery-item">
-              <i class="fas fa-ban"></i>
-              <div>
-                <strong>No Credit Sales</strong>
-                <p>Please note: goods are not sold on credit. Payment is required at the time of purchase.</p>
-              </div>
+            <div class="footer-col">
+              <h4>Quick Links</h4>
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="products.html">Products Catalog</a></li>
+                <li><a href="orders.html">My Orders</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+              </ul>
             </div>
-            <div class="delivery-item">
-              <i class="fas fa-mobile-alt"></i>
-              <div>
-                <strong>Mobile Money Accepted</strong>
-                <p>We accept cash and mobile money payments. Contact us for bank transfer details.</p>
+            <div class="footer-col">
+              <h4>Categories</h4>
+              <ul>
+                <li><a href="products.html?cat=gloves">Gloves &amp; PPE</a></li>
+                <li>
+                  <a href="products.html?cat=syringes"
+                    >Syringes &amp; Cannula</a
+                  >
+                </li>
+                <li>
+                  <a href="products.html?cat=lab-supplies">Lab Supplies</a>
+                </li>
+                <li><a href="products.html?cat=diagnostics">Diagnostics</a></li>
+                <li>
+                  <a href="products.html?cat=equipment">Medical Equipment</a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h4>Contact Us</h4>
+              <ul class="footer-contact">
+                <li>
+                  <span class="fc-icon"
+                    ><i class="fas fa-location-dot"></i
+                  ></span>
+                  <span
+                    >Broadcasting Junction,<br />Off the Accra-Winneba Rd,<br />Accra,
+                    Ghana</span
+                  >
+                </li>
+                <li>
+                  <span class="fc-icon"><i class="fas fa-phone"></i></span>
+                  <span
+                    ><a href="tel:+233541406489">054 140 6489</a><br /><a
+                      href="tel:+233204154456"
+                      >020 415 4456</a
+                    ></span
+                  >
+                </li>
+                <li>
+                  <span class="fc-icon"><i class="fas fa-envelope"></i></span>
+                  <a href="mailto:NTFLGhana@gmail.com">NTFLGhana@gmail.com</a>
+                </li>
+                <li>
+                  <span class="fc-icon"><i class="fas fa-clock"></i></span>
+                  <span>Mon–Fri: 8am–6pm<br />Sat: 8am–4pm</span>
+                </li>
+              </ul>
+              <div class="footer-notice">
+                <i class="fas fa-triangle-exclamation"></i>
+                <strong>Goods are not sold on credit</strong>
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      <!-- ===== RELATED PRODUCTS ===== -->
-      <div class="related-section">
-        <h2 class="related-title">Related Products</h2>
-        <div class="related-grid" id="relatedGrid">
-          <!-- Injected by JS -->
-        </div>
-      </div>
-
-    </div><!-- end container -->
-  </section>
-
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer">
-    <div class="footer-top">
-      <div class="container">
-        <div class="footer-grid">
-          <div class="footer-brand">
-            <a href="index.html" class="footer-logo" aria-label="NTLF Medical home">
-              <div class="logo-mark small" aria-hidden="true">
-                <div class="logo-circle"></div>
-                <div class="logo-lines"><span></span><span></span><span></span></div>
-              </div>
-              <div class="logo-text">
-                <span class="logo-ntlf">NTLF</span>
-                <span class="logo-medical">MEDICAL</span>
-              </div>
-            </a>
-            <p>Your trusted supplier of quality medical and laboratory supplies in Ghana.</p>
-            <div class="social-links">
-              <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-              <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
-              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-              <a href="https://wa.me/233541406489?text=Hello%2C%20I%27m%20interested%20in%20your%20medical%20supplies." target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-            </div>
-          </div>
-          <div class="footer-col">
-            <h4>Quick Links</h4>
-            <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About Us</a></li>
-              <li><a href="products.html">Products Catalog</a></li>
-              <li><a href="orders.html">My Orders</a></li>
-              <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4>Categories</h4>
-            <ul>
-              <li><a href="products.html?cat=gloves">Gloves &amp; PPE</a></li>
-              <li><a href="products.html?cat=syringes">Syringes &amp; Cannula</a></li>
-              <li><a href="products.html?cat=lab-supplies">Lab Supplies</a></li>
-              <li><a href="products.html?cat=diagnostics">Diagnostics</a></li>
-              <li><a href="products.html?cat=equipment">Medical Equipment</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4>Contact Us</h4>
-            <ul class="footer-contact">
-              <li>
-                <span class="fc-icon"><i class="fas fa-location-dot"></i></span>
-                <span>Broadcasting Junction,<br />Off the Accra-Winneba Rd,<br />Accra, Ghana</span>
-              </li>
-              <li>
-                <span class="fc-icon"><i class="fas fa-phone"></i></span>
-                <span><a href="tel:+233541406489">054 140 6489</a><br /><a href="tel:+233204154456">020 415 4456</a></span>
-              </li>
-              <li>
-                <span class="fc-icon"><i class="fas fa-envelope"></i></span>
-                <a href="mailto:NTFLGhana@gmail.com">NTFLGhana@gmail.com</a>
-              </li>
-              <li>
-                <span class="fc-icon"><i class="fas fa-clock"></i></span>
-                <span>Mon–Fri: 8am–6pm<br />Sat: 8am–4pm</span>
-              </li>
-            </ul>
-            <div class="footer-notice">
-              <i class="fas fa-triangle-exclamation"></i>
-              <strong>Goods are not sold on credit</strong>
-            </div>
+      <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+          <p>
+            &copy; <span id="year"></span> NTLF Medical. All rights reserved.
+          </p>
+          <div class="footer-legal">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
           </div>
         </div>
       </div>
-    </div>
-    <div class="footer-bottom">
-      <div class="container footer-bottom-inner">
-        <p>&copy; <span id="year"></span> NTLF Medical. All rights reserved.</p>
-        <div class="footer-legal">
-          <a href="privacy.html">Privacy Policy</a>
-          <a href="terms.html">Terms of Service</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+    </footer>
 
-  <!-- Data + Script -->
-  <script src="js/products-data.js"></script>
-  <script src="js/script-details.js"></script>
-</body>
+    <!-- Data + Script -->
+    <script src="js/products-data.js"></script>
+    <script src="js/script-details.js"></script>
+  </body>
 </html>
