@@ -2441,14 +2441,14 @@ const NTLF_PRODUCTS = [
   // },
   {
     id: 93,
-    name: "URIT Cholesterol Test Strips",
+    name: "4-in-1 Cholesterol Test Strips",
     category: "diagnostics",
     price: 350.0,
     quantity: "25pcs",
     description:
-      "Cholesterol test strips for URIT cholesterol meters. Quick and accurate total cholesterol measurement.",
+      "Cholesterol test strips for 4-in-1 cholesterol meters. Quick and accurate total cholesterol measurement.",
     specs: [
-      "Compatible: URIT cholesterol meters",
+      "Compatible: 4-in-1 cholesterol meters",
       "Sample: Whole blood",
       "Reading time: 60 seconds",
       "Quantity: 25 strips per pack",
