@@ -3753,6 +3753,558 @@ const NTLF_PRODUCTS = [
     featured: false,
     badge: null,
   },
+  /* ══════════════════════════════════
+     MEDICAL SCRUB, BUTTERFLY NEEDLES, WEIGHING SCALE, ETHANOL, SAFETY BOX, SWAB STICKS
+  ══════════════════════════════════ */
+  {
+    id: 156,
+    name: "Medical Scrub (All Sizes & Colors)",
+    category: "consumables",
+    price: 120.0,
+    quantity: "1 piece",
+    description:
+      "Professional medical scrub suit for healthcare professionals. Available in all sizes and colors. Comfortable, breathable, and durable fabric for long shifts.",
+    specs: [
+      "Material: Polyester-cotton blend",
+      "Sizes: XS / S / M / L / XL / XXL",
+      "Colors: Multiple available",
+      "Includes: Top and pants",
+      "Use: Clinical / Hospital wear",
+    ],
+    image: "assets/images/products/scrubn.jpg",
+    images: [
+      "assets/images/products/scrubn.jpg",
+      "assets/images/products/scrub-2.jpg",
+      "assets/images/products/scrub-3.jpg",
+      "assets/images/products/scrub-4.jpg",
+    ],
+    featured: false,
+    badge: null,
+  },
+  {
+    id: 157,
+    name: "Butterfly Needles (Safety Scalp Vein Set)",
+    category: "syringes",
+    price: 1.3,
+    quantity: "1 piece",
+    description:
+      "Butterfly needle safety scalp vein set for venepuncture and IV access. Flexible wings for easy handling and secure placement.",
+    specs: [
+      "Type: Safety butterfly needle",
+      "Sizes: 21G / 23G / 25G",
+      "Tubing length: 30 cm",
+      "Sterile: Yes",
+      "Use: Venepuncture / IV access",
+    ],
+    image: "assets/images/products/but.jpg",
+    images: [
+      "assets/images/products/but.jpg",
+      "assets/images/products/but-2.jpg",
+      "assets/images/products/but-3.jpg",
+      "assets/images/products/but-4.jpg",
+    ],
+    featured: false,
+    badge: null,
+  },
+  {
+    id: 158,
+    name: "Weighing Scale (Wing Scale)",
+    category: "diagnostics",
+    price: 500.0,
+    quantity: "1 piece",
+    description:
+      "Medical weighing scale with wing design for stability. Accurate weight measurement for clinical and home use.",
+    specs: [
+      "Type: Mechanical weighing scale",
+      "Capacity: 120 kg",
+      "Accuracy: ±0.5 kg",
+      "Display: Analogue dial",
+      "Use: Weight measurement",
+    ],
+    image: "assets/images/products/sca.jpg",
+    images: [
+      "assets/images/products/sca.jpg",
+      "assets/images/products/sca-2.jpg",
+      "assets/images/products/sca-3.jpg",
+      "assets/images/products/sca-4.jpg",
+    ],
+    featured: false,
+    badge: null,
+  },
+  {
+    id: 159,
+    name: "Ethanol (70% or 90%)",
+    category: "wound-care",
+    price: 200.0,
+    quantity: "1 piece",
+    description:
+      "Medical-grade ethanol for disinfection and antisepsis. Available in 70% or 90% concentration for clinical use.",
+    specs: [
+      "Concentration: 70% or 90%",
+      "Volume: 1 Litre",
+      "Use: Skin disinfection / Surface cleaning",
+      "Storage: Cool dry place",
+      "Flammable: Yes",
+    ],
+    image: "assets/images/products/etha.jpg",
+    images: [
+      "assets/images/products/etha.jpg",
+      "assets/images/products/etha-2.jpg",
+      "assets/images/products/etha-3.jpg",
+      "assets/images/products/etha-4.jpg",
+    ],
+    featured: false,
+    badge: null,
+  },
+  {
+    id: 160,
+    name: "Safety Box (Sharps Disposal Container)",
+    category: "consumables",
+    price: 15.0,
+    quantity: "1 piece",
+    description:
+      "Safety sharps disposal box for safe collection and disposal of needles, syringes, and other sharp medical waste.",
+    specs: [
+      "Material: Heavy-duty puncture-resistant plastic",
+      "Capacity: 1 Litre / 5 Litre",
+      "Features: Fill indicator, secure lid",
+      "Use: Sharps disposal",
+      "UN certified: Yes",
+    ],
+    image: "assets/images/products/safe.jpg",
+    images: [
+      "assets/images/products/safe.jpg",
+      "assets/images/products/safe-2.jpg",
+      "assets/images/products/safe-3.jpg",
+      "assets/images/products/safe-4.jpg",
+    ],
+    featured: false,
+    badge: null,
+  },
+  {
+    id: 161,
+    name: "Swab Sticks (Cotton Swabs)",
+    category: "wound-care",
+    price: 80.0,
+    quantity: "100 pieces",
+    description:
+      "Medical-grade cotton swab sticks for wound cleaning, specimen collection, and general hygiene. Individually wrapped or bulk.",
+    specs: [
+      "Material: 100% Cotton tips, plastic/paper shaft",
+      "Length: Standard",
+      "Sterile: Yes",
+      "Quantity: 100 sticks per pack",
+      "Use: Wound cleaning / Specimen collection",
+    ],
+    image: "assets/images/products/swab.jpg",
+    images: [
+      "assets/images/products/swab.jpg",
+      "assets/images/products/swab-2.jpg",
+      "assets/images/products/swab-3.jpg",
+      "assets/images/products/swab-4.jpg",
+    ],
+    featured: false,
+    badge: null,
+  },
+
+  /* ══════════════════════════════════
+     ELECTRICAL COMMODE WHEELCHAIR
+  ══════════════════════════════════ */
+  {
+    id: 162,
+    name: "Electrical Commode Wheelchair",
+    category: "furniture",
+    price: 2300.0,
+    quantity: "1 piece",
+    description:
+      "Electric commode wheelchair with built-in removable commode pan. Battery-powered for easy mobility and patient comfort.",
+    specs: [
+      "Type: Electric commode wheelchair",
+      "Commode: Removable pan",
+      "Battery: Rechargeable lithium",
+      "Range: 15 km per charge",
+      "Use: Patient mobility / Bedside commode",
+    ],
+    image: "assets/images/products/electcom.jpg",
+    images: [
+      "assets/images/products/electcom.jpg",
+      "assets/images/products/electcom-2.jpg",
+      "assets/images/products/electcom-3.jpg",
+      "assets/images/products/electcom-4.jpg",
+    ],
+    featured: false,
+    badge: null,
+  },
+
+  /* ══════════════════════════════════
+     ORTHOPEDIC CAST PADDING (3 SIZES)
+  ══════════════════════════════════ */
+  {
+    id: 163,
+    name: "Orthopedic Cast Padding 10cm",
+    category: "wound-care",
+    price: 6.0,
+    quantity: "1 roll",
+    description:
+      "Orthopedic cast padding 10cm width for under cast application. Provides cushioning and protection for patients with fractures.",
+    specs: [
+      "Width: 10 cm",
+      "Length: 2.7 m stretched",
+      "Material: Cotton / Polyester",
+      "Use: Under cast padding",
+      "Soft and breathable: Yes",
+    ],
+    image: "assets/images/products/cast.jpg",
+    images: [
+      "assets/images/products/cast.jpg",
+      "assets/images/products/cast-2.jpg",
+      "assets/images/products/cast-3.jpg",
+      "assets/images/products/cast-4.jpg",
+    ],
+    featured: false,
+    badge: null,
+  },
+  {
+    id: 164,
+    name: "Orthopedic Cast Padding 15cm",
+    category: "wound-care",
+    price: 7.0,
+    quantity: "1 roll",
+    description:
+      "Orthopedic cast padding 15cm width for under cast application. Provides cushioning and protection for patients with fractures.",
+    specs: [
+      "Width: 15 cm",
+      "Length: 2.7 m stretched",
+      "Material: Cotton / Polyester",
+      "Use: Under cast padding",
+      "Soft and breathable: Yes",
+    ],
+    image: "assets/images/products/cast.jpg",
+    images: [
+      "assets/images/products/cast.jpg",
+      "assets/images/products/cast-2.jpg",
+      "assets/images/products/cast-3.jpg",
+      "assets/images/products/cast-4.jpg",
+    ],
+    featured: false,
+    badge: null,
+  },
+  {
+    id: 165,
+    name: "Orthopedic Cast Padding 20cm",
+    category: "wound-care",
+    price: 10.0,
+    quantity: "1 roll",
+    description:
+      "Orthopedic cast padding 20cm width for under cast application. Provides cushioning and protection for patients with fractures.",
+    specs: [
+      "Width: 20 cm",
+      "Length: 2.7 m stretched",
+      "Material: Cotton / Polyester",
+      "Use: Under cast padding",
+      "Soft and breathable: Yes",
+    ],
+    image: "assets/images/products/cast.jpg",
+    images: [
+      "assets/images/products/cast.jpg",
+      "assets/images/products/cast-2.jpg",
+      "assets/images/products/cast-3.jpg",
+      "assets/images/products/cast-4.jpg",
+    ],
+    featured: false,
+    badge: null,
+  },
+
+  /* ══════════════════════════════════
+     RYLES TUBE, TIMER ANEROID, BABY WEIGHING SCALE
+  ══════════════════════════════════ */
+  {
+    id: 166,
+    name: "Ryles Tube (Nasogastric Tube)",
+    category: "syringes",
+    price: 5.0,
+    quantity: "1 piece",
+    description:
+      "Ryles tube (nasogastric tube) for gastric decompression and enteral feeding. Made of medical-grade PVC.",
+    specs: [
+      "Sizes: 12Fr – 18Fr",
+      "Material: Medical-grade PVC",
+      "Length: 120 cm",
+      "Features: Radiopaque line",
+      "Use: Nasogastric feeding / decompression",
+    ],
+    image: "assets/images/products/ryle.jpg",
+    images: [
+      "assets/images/products/ryle.jpg",
+      "assets/images/products/ryle-2.jpg",
+      "assets/images/products/ryle-3.jpg",
+      "assets/images/products/ryle-4.jpg",
+    ],
+    featured: false,
+    badge: null,
+  },
+  {
+    id: 167,
+    name: "Timer Aneroid (Aneroid Sphygmomanometer)",
+    category: "diagnostics",
+    price: 350.0,
+    quantity: "1 piece",
+    description:
+      "Aneroid sphygmomanometer with timer function for accurate blood pressure measurement. Calibrated dial with adult cuff.",
+    specs: [
+      "Type: Aneroid sphygmomanometer",
+      "Cuff: Adult size",
+      "Display: Analogue dial with timer",
+      "Use: Blood pressure measurement",
+      "Portable: Yes",
+    ],
+    image: "assets/images/products/timer.jpg",
+    images: [
+      "assets/images/products/timer.jpg",
+      "assets/images/products/timer-2.jpg",
+      "assets/images/products/timer-3.jpg",
+      "assets/images/products/timer-4.jpg",
+    ],
+    featured: false,
+    badge: null,
+  },
+  {
+    id: 168,
+    name: "Baby Weighing Scale (Digital EBS-A20)",
+    category: "equipment",
+    price: 1200.0,
+    quantity: "1 piece",
+    description:
+      "Digital baby weighing scale EBS-A20 for accurate infant weight measurement. Tray design for safe and comfortable weighing.",
+    specs: [
+      "Type: Digital baby scale",
+      "Brand: EBS-A20",
+      "Capacity: 20 kg",
+      "Display: LCD",
+      "Use: Infant weight measurement",
+    ],
+    image: "assets/images/products/baby.jpg",
+    images: [
+      "assets/images/products/baby.jpg",
+      "assets/images/products/baby-2.jpg",
+      "assets/images/products/baby-3.jpg",
+      "assets/images/products/baby-4.jpg",
+    ],
+    featured: false,
+    badge: null,
+  },
+
+  /* ══════════════════════════════════
+     POLYGLYCOLIC ACID SUTURE, GYNAECOLOGICAL GLOVES, ABDOMINAL PAD
+  ══════════════════════════════════ */
+  {
+    id: 169,
+    name: "Polyglycolic Acid Surgical Suture (PGA)",
+    category: "syringes",
+    price: 95.0,
+    quantity: "12 pieces",
+    description:
+      "Polyglycolic acid (PGA) absorbable surgical suture for internal tissue approximation. Synthetic braided material with excellent tensile strength.",
+    specs: [
+      "Type: Absorbable (PGA)",
+      "Sizes: Various (2/0, 3/0, 4/0)",
+      "Needle: Round bodied or cutting",
+      "Quantity: 12 pieces per box",
+      "Use: Internal tissue suturing",
+    ],
+    image: "assets/images/products/acid.jpg",
+    images: [
+      "assets/images/products/acid.jpg",
+      "assets/images/products/acid-2.jpg",
+      "assets/images/products/acid-3.jpg",
+      "assets/images/products/acid-4.jpg",
+    ],
+    featured: false,
+    badge: null,
+  },
+  {
+    id: 170,
+    name: "Gynecological Gloves (Powdered Sterile)",
+    category: "gloves",
+    price: 15.0,
+    quantity: "1 pair",
+    description:
+      "Sterile powdered gynecological gloves for examination and procedures. Latex material with powder for easy donning.",
+    specs: [
+      "Type: Gynecological examination gloves",
+      "Material: Natural Latex",
+      "Powdered: Yes",
+      "Sterile: Yes",
+      "Use: Gynecological examination",
+    ],
+    image: "assets/images/products/gyna.jpg",
+    images: [
+      "assets/images/products/gyna.jpg",
+      "assets/images/products/gyna-2.jpg",
+      "assets/images/products/gyna-3.jpg",
+      "assets/images/products/gyna-4.jpg",
+    ],
+    featured: false,
+    badge: null,
+  },
+  {
+    id: 171,
+    name: "Abdominal Pad (X-Ray Detectable)",
+    category: "wound-care",
+    price: 15.0,
+    quantity: "5 pieces",
+    description:
+      "X-ray detectable abdominal pad for surgical and wound care. Features radiopaque thread for post-surgical monitoring.",
+    specs: [
+      "Type: Abdominal pad",
+      "X-ray detectable: Yes (radiopaque thread)",
+      "Size: 20 × 30 cm",
+      "Sterile: Yes",
+      "Quantity: 5 pieces per pack",
+    ],
+    image: "assets/images/products/x-ray.jpg",
+    images: [
+      "assets/images/products/x-ray.jpg",
+      "assets/images/products/x-ray-2.jpg",
+      "assets/images/products/x-ray-3.jpg",
+      "assets/images/products/x-ray-4.jpg",
+    ],
+    featured: false,
+    badge: null,
+  },
+
+  /* ══════════════════════════════════
+     SURGICAL FACE MASK & SINOCARE BP MONITOR
+  ══════════════════════════════════ */
+  {
+    id: 172,
+    name: "Surgical Face Mask 3-Ply",
+    category: "consumables",
+    price: 18.0,
+    quantity: "100 pieces",
+    description:
+      "3-ply disposable surgical face masks with high bacterial filtration efficiency. Adjustable nose wire and elastic ear loops.",
+    specs: [
+      "Layers: 3-ply",
+      "BFE: ≥95%",
+      "Ear loops: Elastic",
+      "Nose wire: Adjustable",
+      "Quantity: 100 pcs per box",
+    ],
+    image: "assets/images/products/face.jpg",
+    images: [
+      "assets/images/products/face.jpg",
+      "assets/images/products/face-2.jpg",
+      "assets/images/products/face-3.jpg",
+      "assets/images/products/face-4.jpg",
+    ],
+    featured: false,
+    badge: null,
+  },
+  {
+    id: 173,
+    name: "SinoCare Arm Type Electronic BP Monitor",
+    category: "diagnostics",
+    price: 370.0,
+    quantity: "1 piece",
+    description:
+      "SinoCare upper arm electronic blood pressure monitor with large LCD display and irregular heartbeat detection.",
+    specs: [
+      "Type: Upper arm automatic",
+      "Brand: SinoCare",
+      "Display: Large LCD",
+      "Irregular heartbeat detection: Yes",
+      "Memory: 60 readings",
+    ],
+    image: "assets/images/products/arm.jpg",
+    images: [
+      "assets/images/products/arm.jpg",
+      "assets/images/products/arm-2.jpg",
+      "assets/images/products/arm-3.jpg",
+      "assets/images/products/arm-4.jpg",
+    ],
+    featured: false,
+    badge: null,
+  },
+
+  /* ══════════════════════════════════
+     THREE-WAY SILICONE FOLEY CATHETER & BARONPLAST ZOO PLASTER
+  ══════════════════════════════════ */
+  {
+    id: 174,
+    name: "Three-Way Silicone Foley Catheter (All Sizes)",
+    category: "syringes",
+    price: 25.0,
+    quantity: "1 piece",
+    description:
+      "Three-way silicone Foley catheter for continuous bladder irrigation (CBI). Available in all sizes. Silicone material for patient comfort.",
+    specs: [
+      "Type: 3-way (triple lumen)",
+      "Material: Medical-grade silicone",
+      "Sizes: 16Fr – 26Fr",
+      "Balloon: 30 ml",
+      "Use: Continuous bladder irrigation",
+    ],
+    image: "assets/images/products/3way.jpg",
+    images: [
+      "assets/images/products/3way.jpg",
+      "assets/images/products/3way.jpg",
+      "assets/images/products/3way.jpg",
+      "assets/images/products/3way.jpg",
+    ],
+    featured: false,
+    badge: null,
+  },
+  {
+    id: 175,
+    name: "Baronplast Zoo Plaster Without Spool 10cm",
+    category: "wound-care",
+    price: 20.0,
+    quantity: "1 roll",
+    description:
+      "Baronplast zinc oxide adhesive plaster (zoo plaster) without spool. 10cm width for securing dressings and bandages.",
+    specs: [
+      "Brand: Baronplast",
+      "Type: Zinc oxide adhesive plaster",
+      "Width: 10 cm",
+      "Without spool: Yes",
+      "Use: Securing dressings",
+    ],
+    image: "assets/images/products/zo.jpg",
+    images: [
+      "assets/images/products/zo.jpg",
+      "assets/images/products/zo.jpg",
+      "assets/images/products/zo.jpg",
+      "assets/images/products/zo.jpg",
+    ],
+    featured: false,
+    badge: null,
+  },
+  {
+    id: 176,
+    name: "Baronplast Zoo Plaster Without Spool 15cm",
+    category: "wound-care",
+    price: 25.0,
+    quantity: "1 roll",
+    description:
+      "Baronplast zinc oxide adhesive plaster (zoo plaster) without spool. 15cm width for securing dressings and bandages.",
+    specs: [
+      "Brand: Baronplast",
+      "Type: Zinc oxide adhesive plaster",
+      "Width: 15 cm",
+      "Without spool: Yes",
+      "Use: Securing dressings",
+    ],
+    image: "assets/images/products/zo.jpg",
+    images: [
+      "assets/images/products/zo.jpg",
+      "assets/images/products/zo.jpg",
+      "assets/images/products/zo.jpg",
+      "assets/images/products/zo.jpg",
+    ],
+    featured: false,
+    badge: null,
+  },
 ];
 
 /* ── Shared Utility Functions ──────────────────────────────── */
