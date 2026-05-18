@@ -4305,6 +4305,207 @@ const NTLF_PRODUCTS = [
     featured: false,
     badge: null,
   },
+  /* ══════════════════════════════════
+     MANUAL WHEELCHAIR COMMODE & MANUAL WHEELCHAIR
+  ══════════════════════════════════ */
+  {
+    id: 177,
+    name: "Manual Wheelchair Commode (SYIV100-TXZ-A2)",
+    category: "furniture",
+    price: 1650.0,
+    quantity: "1 piece",
+    description:
+      "Manual wheelchair commode with built-in removable commode pan. Model SYIV100-TXZ-A2. Durable steel frame with foldable design for easy storage.",
+    specs: [
+      "Model: SYIV100-TXZ-A2",
+      "Type: Manual wheelchair with commode",
+      "Frame: Steel (foldable)",
+      "Commode pan: Removable",
+      "Seat width: 46 cm",
+      "Load capacity: 100 kg",
+    ],
+    image: "assets/images/products/txy.jpg",
+    images: [
+      "assets/images/products/txy.jpg",
+      "assets/images/products/txy-2.jpg",
+      "assets/images/products/txy-3.jpg",
+      "assets/images/products/txy-4.jpg",
+    ],
+    featured: false,
+    badge: null,
+  },
+  {
+    id: 178,
+    name: "Manual Wheelchair (SY1V100-TX-A1)",
+    category: "furniture",
+    price: 1400.0,
+    quantity: "1 piece",
+    description:
+      "Lightweight manual wheelchair model SY1V100-TX-A1. Foldable design with padded seat, removable armrests, and swing-away footrests.",
+    specs: [
+      "Model: SY1V100-TX-A1",
+      "Frame: Steel (foldable)",
+      "Seat width: 46 cm",
+      "Armrests: Removable",
+      "Footrests: Swing-away",
+      "Load capacity: 100 kg",
+    ],
+    image: "assets/images/products/tx.jpg",
+    images: [
+      "assets/images/products/tx.jpg",
+      "assets/images/products/tx-2.jpg",
+      "assets/images/products/tx-3.jpg",
+      "assets/images/products/tx-4.jpg",
+    ],
+    featured: false,
+    badge: null,
+  },
+
+  /* ══════════════════════════════════
+     SINOCARE ARM TYPE BP MONITOR
+  ══════════════════════════════════ */
+  {
+    id: 179,
+    name: "Sinocare Arm Type Electronic Blood Pressure Monitor",
+    category: "diagnostics",
+    price: 380.0,
+    quantity: "1 piece",
+    description:
+      "Sinocare upper arm electronic blood pressure monitor with large LCD display, irregular heartbeat detection, and memory storage.",
+    specs: [
+      "Type: Upper arm automatic",
+      "Brand: Sinocare",
+      "Display: Large LCD",
+      "Irregular heartbeat detection: Yes",
+      "Memory: 60 readings",
+      "Power: 4 × AA batteries or adapter",
+    ],
+    image: "assets/images/products/sin.jpg",
+    images: [
+      "assets/images/products/sin.jpg",
+      "assets/images/products/sin-2.jpg",
+      "assets/images/products/sin-3.jpg",
+      "assets/images/products/sin-4.jpg",
+    ],
+    featured: false,
+    badge: null,
+  },
+
+  /* ══════════════════════════════════
+     ELECTRIC SUCTION MACHINE (TWO MODELS)
+  ══════════════════════════════════ */
+  {
+    id: 180,
+    name: "Electric Suction Machine (7A-23D)",
+    category: "equipment",
+    price: 2300.0,
+    quantity: "1 piece",
+    description:
+      "Electric suction machine model 7A-23D for removing secretions, blood, and fluids from airways. Portable and easy to operate.",
+    specs: [
+      "Model: 7A-23D",
+      "Type: Electric suction machine",
+      "Vacuum range: 0–600 mmHg",
+      "Collection bottle: 1 litre",
+      "Power: AC",
+      "Use: Airway suctioning / Emergency",
+    ],
+    image: "assets/images/products/suc.jpg",
+    images: [
+      "assets/images/products/suc.jpg",
+      "assets/images/products/suc-2.jpg",
+      "assets/images/products/suc-3.jpg",
+      "assets/images/products/suc-4.jpg",
+    ],
+    featured: false,
+    badge: null,
+  },
+  {
+    id: 181,
+    name: "Electric Suction Machine (7A-23B)",
+    category: "equipment",
+    price: 2900.0,
+    quantity: "1 piece",
+    description:
+      "Electric suction machine model 7A-23B for removing secretions, blood, and fluids from airways. Higher capacity with dual collection bottles.",
+    specs: [
+      "Model: 7A-23B",
+      "Type: Electric suction machine",
+      "Vacuum range: 0–600 mmHg",
+      "Collection bottle: 2 litres (dual)",
+      "Power: AC",
+      "Use: Airway suctioning / Emergency",
+    ],
+    image: "assets/images/products/suc.jpg",
+    images: [
+      "assets/images/products/suc.jpg",
+      "assets/images/products/suc-2.jpg",
+      "assets/images/products/suc-3.jpg",
+      "assets/images/products/suc-4.jpg",
+    ],
+    featured: false,
+    badge: null,
+  },
+
+  /* ══════════════════════════════════
+     BABY COTT (INFANT COT / CRIB)
+  ══════════════════════════════════ */
+  {
+    id: 182,
+    name: "Baby Cott (Infant Cot / Hospital Crib)",
+    category: "furniture",
+    price: 3000.0,
+    quantity: "1 piece",
+    description:
+      "Hospital-grade baby cott (infant crib) for newborn and infant care. Sturdy construction with adjustable height and lockable castors.",
+    specs: [
+      "Type: Infant hospital cot",
+      "Frame: Steel powder-coated",
+      "Side rails: Foldable",
+      "Castors: 4 lockable wheels",
+      "Height: Adjustable",
+      "Use: Newborn / Infant care",
+    ],
+    image: "assets/images/products/cott.jpg",
+    images: [
+      "assets/images/products/cott.jpg",
+      "assets/images/products/cott-2.jpg",
+      "assets/images/products/cott-3.jpg",
+      "assets/images/products/cott-4.jpg",
+    ],
+    featured: false,
+    badge: null,
+  },
+
+  /* ══════════════════════════════════
+     GYNAECOLOGICAL DELIVERY BED
+  ══════════════════════════════════ */
+  {
+    id: 183,
+    name: "Gynaecological Delivery Bed",
+    category: "furniture",
+    price: 5200.0,
+    quantity: "1 piece",
+    description:
+      "Gynaecological delivery bed for labour, delivery, and gynaecological examinations. Adjustable positions with leg rests and Trendelenburg function.",
+    specs: [
+      "Type: Delivery / Gynaecological bed",
+      "Positions: Backrest, leg rest, Trendelenburg",
+      "Leg rests: Adjustable and removable",
+      "Castors: 4 lockable wheels",
+      "Material: Stainless steel frame with padded upholstery",
+      "Use: Labour & delivery / Gynaecological exams",
+    ],
+    image: "assets/images/products/del.jpg",
+    images: [
+      "assets/images/products/del.jpg",
+      "assets/images/products/del-2.jpg",
+      "assets/images/products/del-3.jpg",
+      "assets/images/products/del-4.jpg",
+    ],
+    featured: false,
+    badge: null,
+  },
 ];
 
 /* ── Shared Utility Functions ──────────────────────────────── */
